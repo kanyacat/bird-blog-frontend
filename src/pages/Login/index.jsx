@@ -23,11 +23,21 @@ export const Login = () => {
 		defaultValues: {
 			email: 'test1@test.ru',
 			password: '12345'
-		}
+		},
+		mode: 'onChange'
 	})
 
-	const onSubmit = values => {
-		dispatch(fetchAuth(values))
+	const onSubmit = async values => {
+		const data = await dispatch(fetchAuth(values))
+
+		console.log(data)
+		if (!data.payload) {
+			return alert('Не удалось авторизоваться')
+		}
+
+		if (data.payload.token) {
+			window.localStorage.setItem('token', data.payload.token)
+		}
 	}
 
 	if (isAuth) {
@@ -58,7 +68,13 @@ export const Login = () => {
 					{...register('password', { required: 'Укажите пароль' })}
 					fullWidth
 				/>
-				<Button type='submit' size='large' variant='contained' fullWidth>
+				<Button
+					disabled={!isValid}
+					type='submit'
+					size='large'
+					variant='contained'
+					fullWidth
+				>
 					Войти
 				</Button>
 			</form>
