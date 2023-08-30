@@ -5,11 +5,7 @@ import Grid from '@mui/material/Grid'
 
 import { CommentsBlock, Post, TagsBlock } from '../components'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-	fetchPopulatePosts,
-	fetchPosts,
-	fetchTags
-} from '../redux/slices/posts'
+import { fetchPosts, fetchTags } from '../redux/slices/posts'
 import { Link } from 'react-router-dom'
 
 export const Home = () => {
@@ -23,7 +19,9 @@ export const Home = () => {
 	const [isPopulate, setIsPopulate] = useState(false)
 
 	useEffect(() => {
-		isPopulate ? dispatch(fetchPopulatePosts()) : dispatch(fetchPosts())
+		const sortProperty = isPopulate ? 'viewsCount' : 'createdAt'
+
+		dispatch(fetchPosts(sortProperty))
 
 		dispatch(fetchTags())
 	}, [isPopulate])
@@ -38,7 +36,7 @@ export const Home = () => {
 				<Link to={'/'} onClick={() => setIsPopulate(false)}>
 					<Tab label='Новые' />
 				</Link>
-				<Link to={'/posts/populate'} onClick={() => setIsPopulate(true)}>
+				<Link to={'/'} onClick={() => setIsPopulate(true)}>
 					<Tab label='Популярные' />
 				</Link>
 			</Tabs>
