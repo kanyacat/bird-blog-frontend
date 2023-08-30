@@ -55,7 +55,7 @@ export const AddPost = () => {
 		try {
 			setLoading(true)
 
-			const fields = { title, imageUrl, tags, text }
+			const fields = { title, imageUrl, tags: tags.split(','), text }
 
 			const { data } = isEditing
 				? await axios.patch(`/posts/${id}`, fields)
