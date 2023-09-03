@@ -22,6 +22,7 @@ export const Index = user => {
 			const fields = { text }
 
 			const { data } = await axios.post(`/posts/${id}/addComment`, fields)
+			const { count } = await axios.patch(`/posts/${id}/addComment`, fields)
 			setText('')
 		} catch (err) {
 			console.warn(err)
