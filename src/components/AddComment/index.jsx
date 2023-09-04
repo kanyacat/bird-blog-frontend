@@ -7,9 +7,13 @@ import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import { useParams } from 'react-router-dom'
 import axios from '../../axios'
+import { useDispatch } from 'react-redux'
+import { addComment } from '../../redux/slices/posts'
 
 export const Index = user => {
 	const { id } = useParams()
+
+	const dispatch = useDispatch()
 
 	const [isLoading, setLoading] = React.useState(false)
 
@@ -23,7 +27,10 @@ export const Index = user => {
 
 			const { data } = await axios.post(`/posts/${id}/addComment`, fields)
 			const { count } = await axios.patch(`/posts/${id}/addComment`, fields)
+
 			setText('')
+
+			dispatch(addComment(data))
 		} catch (err) {
 			console.warn(err)
 			alert('Не удалось отправить комментарий')

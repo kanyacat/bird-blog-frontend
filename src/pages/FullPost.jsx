@@ -6,9 +6,11 @@ import axios from '../axios'
 import ReactMarkdown from 'react-markdown'
 import { useSelector } from 'react-redux'
 import { isAuthSelector } from '../redux/slices/auth'
+import { commentsSelector } from '../redux/slices/posts'
 
 export const FullPost = () => {
 	const isAuth = useSelector(isAuthSelector)
+	const comm = useSelector(commentsSelector)
 
 	const [data, setData] = useState()
 	const [comments, setComments] = useState()
@@ -39,7 +41,7 @@ export const FullPost = () => {
 				console.warn(err)
 				alert('Ошибка при получении комментариев')
 			})
-	}, [comments])
+	}, [comm])
 
 	if (isLoading) {
 		return <Post isLoading={isLoading} isFullPost />
