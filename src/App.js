@@ -1,6 +1,6 @@
 import Container from '@mui/material/Container'
 
-import { Header } from './components'
+import { Header, Main } from './components'
 import { AddPost, FullPost, Home, Login, Registration } from './pages'
 import { Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -19,6 +19,7 @@ function App() {
 	return (
 		<>
 			<Header />
+			<Main />
 			<Container maxWidth='lg'>
 				<Routes>
 					<Route path='/' element={<Home />} />
