@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '@mui/material/Button'
 
 import styles from './Header.module.scss'
 import Container from '@mui/material/Container'
@@ -23,29 +22,35 @@ export const Header = () => {
 			<Container maxWidth='lg'>
 				<div className={styles.inner}>
 					<Link className={styles.logo} to='/'>
-						<div>ARCHAKOV BLOG</div>
+						<div>BLOG</div>
 					</Link>
 					<div className={styles.buttons}>
+						<Link to='/' className={styles.nav}>
+							Главная
+						</Link>
+						<Link to='/' className={styles.nav}>
+							О нас
+						</Link>
+						<Link to='/' className={styles.nav}>
+							Что-то еще
+						</Link>
+						<span className={styles.line}>|</span>
 						{isAuth ? (
 							<>
-								<Link to='/add-post'>
-									<Button variant='contained'>Написать статью</Button>
+								<Link to='/add-post' className={styles.nav}>
+									Написать статью
 								</Link>
-								<Button
-									onClick={onClickLogout}
-									variant='contained'
-									color='error'
-								>
+								<button onClick={onClickLogout} className={styles.nav}>
 									Выйти
-								</Button>
+								</button>
 							</>
 						) : (
 							<>
-								<Link to='/login'>
-									<Button variant='outlined'>Войти</Button>
+								<Link to='/login' className={styles.nav}>
+									Войти
 								</Link>
-								<Link to='/register'>
-									<Button variant='contained'>Создать аккаунт</Button>
+								<Link to='/register' className={styles.nav}>
+									Создать аккаунт
 								</Link>
 							</>
 						)}
