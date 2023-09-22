@@ -1,0 +1,29 @@
+.root {
+	padding: 0;
+
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	font-family: Lora, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 25px; /* 208.333% */
+
+	.link {
+		color: #495057;
+		margin-right: 20px;
+		text-decoration: none;
+		list-style: none;
+
+		outline: none;
+		transition: color 0.1s linear;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #d4a373;
+		}
+	}
+}

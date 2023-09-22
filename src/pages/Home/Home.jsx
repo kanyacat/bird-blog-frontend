@@ -3,10 +3,11 @@ import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import Grid from '@mui/material/Grid'
 
-import { CommentsBlock, Post, TagsBlock } from '../components'
+import { CommentsBlock, Post, TagsBlock } from '../../components'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchComments, fetchPosts, fetchTags } from '../redux/slices/posts'
+import { fetchComments, fetchPosts, fetchTags } from '../../redux/slices/posts'
 import { Link } from 'react-router-dom'
+import styles from './Home.module.scss'
 
 export const Home = () => {
 	const userData = useSelector(state => state.auth.data)
@@ -29,6 +30,8 @@ export const Home = () => {
 
 	return (
 		<>
+			<h1 className={styles.h1}>Последние статьи</h1>
+			<TagsBlock items={tags.items} isLoading={isTagsLoading} />
 			<Tabs
 				style={{ marginBottom: 15 }}
 				value={Number(isPopulate)}
@@ -67,7 +70,6 @@ export const Home = () => {
 					)}
 				</Grid>
 				<Grid sm={4} xs={12} item>
-					<TagsBlock items={tags.items} isLoading={isTagsLoading} />
 					<CommentsBlock items={comments.items} isLoading={false} />
 				</Grid>
 			</Grid>
