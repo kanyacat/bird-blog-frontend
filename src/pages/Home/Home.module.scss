@@ -5,3 +5,11 @@ h1 {
 	font-weight: 700;
 	line-height: normal;
 }
+
+.posts {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	align-items: center;
+}

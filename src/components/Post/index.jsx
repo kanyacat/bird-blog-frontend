@@ -7,11 +7,11 @@ import EyeIcon from '@mui/icons-material/RemoveRedEyeOutlined'
 import CommentIcon from '@mui/icons-material/ChatBubbleOutlineOutlined'
 
 import styles from './Post.module.scss'
-import { UserInfo } from '../UserInfo'
 import { PostSkeleton } from './Skeleton'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { fetchRemovePost } from '../../redux/slices/posts'
+import { UserInfo } from '../UserInfo'
 
 export const Post = ({
 	id,
@@ -76,6 +76,7 @@ export const Post = ({
 					</ul>
 					{children && <div className={styles.content}>{children}</div>}
 					<ul className={styles.postDetails}>
+						<li>{children}</li>
 						<li>
 							<EyeIcon />
 							<span>{viewsCount}</span>
