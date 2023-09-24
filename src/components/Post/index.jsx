@@ -76,7 +76,6 @@ export const Post = ({
 					</ul>
 					{children && <div className={styles.content}>{children}</div>}
 					<ul className={styles.postDetails}>
-						<li>{children}</li>
 						<li>
 							<EyeIcon />
 							<span>{viewsCount}</span>

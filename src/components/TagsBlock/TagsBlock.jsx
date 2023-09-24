@@ -6,7 +6,7 @@ export const TagsBlock = ({ items, isLoading = true }) => {
 	return (
 		<ul className={styles.root}>
 			<Link className={styles.link} to={`/`}>
-				<li>Все теги</li>
+				<li>Все статьи</li>
 			</Link>
 			{(isLoading ? [...Array(5)] : items).map((name, i) => (
 				<Link className={styles.link} to={`/tag/${name}`}>
