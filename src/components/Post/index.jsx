@@ -12,6 +12,8 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { fetchRemovePost } from '../../redux/slices/posts'
 import { UserInfo } from '../UserInfo'
+import { createTheme } from '@mui/material/styles'
+import { ThemeProvider } from '@mui/material'
 
 export const Post = ({
 	id,
@@ -38,19 +40,28 @@ export const Post = ({
 		}
 	}
 
+	const theme = createTheme({
+		palette: {
+			primary: { main: '#d4a373' },
+			secondary: { main: '#495057' }
+		}
+	})
+
 	return (
 		<div className={clsx(styles.root, { [styles.rootFull]: isFullPost })}>
 			{isEditable && (
-				<div className={styles.editButtons}>
-					<Link to={`/posts/${id}/edit`}>
-						<IconButton color='primary'>
-							<EditIcon />
+				<ThemeProvider theme={theme}>
+					<div className={styles.editButtons}>
+						<Link to={`/posts/${id}/edit`}>
+							<IconButton color='primary'>
+								<EditIcon />
+							</IconButton>
+						</Link>
+						<IconButton onClick={onClickRemove} color='secondary'>
+							<DeleteIcon />
 						</IconButton>
-					</Link>
-					<IconButton onClick={onClickRemove} color='secondary'>
-						<DeleteIcon />
-					</IconButton>
-				</div>
+					</div>
+				</ThemeProvider>
 			)}
 			{imageUrl && (
 				<img
@@ -67,14 +78,22 @@ export const Post = ({
 					>
 						{isFullPost ? title : <Link to={`/posts/${id}`}>{title}</Link>}
 					</h2>
-					<ul className={styles.tags}>
+					<ul className={clsx(styles.tags, { [styles.tagsFull]: isFullPost })}>
 						{tags.map(name => (
 							<li key={name}>
 								<Link to={`/tag/${name}`}>#{name}</Link>
 							</li>
 						))}
 					</ul>
-					{children && <div className={styles.content}>{children}</div>}
+					{children && (
+						<div
+							className={clsx(styles.content, {
+								[styles.contentFull]: isFullPost
+							})}
+						>
+							{children}
+						</div>
+					)}
 					<ul className={styles.postDetails}>
 						<li>
 							<EyeIcon />
