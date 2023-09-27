@@ -1,19 +1,36 @@
 .root {
-  display: flex;
-  margin-top: 10px;
-  padding-bottom: 20px;
-  margin-right: 20px;
-  margin-left: 17px;
+	font-family: Lora, serif;
+
+	display: flex;
+	margin-top: 10px;
+	padding-bottom: 20px;
+	margin-right: 20px;
+	margin-left: 17px;
 }
 
 .avatar {
-  margin-right: 15px;
+	margin-right: 15px;
 }
 
 .form {
-  width: 100%;
+	width: 100%;
 
-  button {
-    margin-top: 10px;
-  }
+	font-family: Lora, serif;
+
+	button {
+		font-family: Lora, serif;
+
+		background-color: #495057;
+		margin-top: 10px;
+
+		transition: background-color 0.1s linear;
+
+		&:hover {
+			background: #d4a373;
+		}
+	}
+
+	.field {
+		font-family: Lora, serif !important;
+	}
 }

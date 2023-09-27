@@ -26,7 +26,7 @@ export const Home = () => {
 
 	return (
 		<>
-			<h1 className={styles.h1}>Последние статьи</h1>
+			<h1>Последние статьи</h1>
 			<TagsBlock items={tags.items} isLoading={isTagsLoading} />
 			{/*<Tabs*/}
 			{/*	style={{ marginBottom: 15 }}*/}

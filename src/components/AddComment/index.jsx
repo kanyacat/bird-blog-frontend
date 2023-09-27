@@ -9,6 +9,8 @@ import { useParams } from 'react-router-dom'
 import axios from '../../axios'
 import { useDispatch } from 'react-redux'
 import { addComment } from '../../redux/slices/posts'
+import { createTheme } from '@mui/material/styles'
+import { ThemeProvider } from '@mui/material'
 
 export const Index = user => {
 	const { id } = useParams()
@@ -37,20 +39,31 @@ export const Index = user => {
 		}
 	}
 
+	const theme = createTheme({
+		palette: {
+			primary: { main: '#d4a373' }
+		}
+	})
+
 	return (
 		<>
 			<div className={styles.root}>
 				<Avatar classes={{ root: styles.avatar }} src={user.user.avatarUrl} />
 				<div className={styles.form}>
-					<TextField
-						onChange={e => setText(e.target.value)}
-						value={text}
-						label='Написать комментарий'
-						variant='outlined'
-						maxRows={10}
-						multiline
-						fullWidth
-					/>
+					<ThemeProvider theme={theme}>
+						<TextField
+							onChange={e => setText(e.target.value)}
+							value={text}
+							label='Написать комментарий'
+							variant='outlined'
+							maxRows={10}
+							multiline
+							fullWidth
+							color='primary'
+							InputProps={{ style: { fontFamily: 'Lora, serif' } }}
+							InputLabelProps={{ style: { fontFamily: 'Lora, serif' } }}
+						/>
+					</ThemeProvider>
 					<Button onClick={onSubmit} variant='contained'>
 						Отправить
 					</Button>

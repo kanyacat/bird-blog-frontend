@@ -54,7 +54,7 @@
 	overflow: hidden;
 
 	color: #6c757d;
-	font-family: Lora, sans-serif;
+	font-family: Lora, serif;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 400;
@@ -70,6 +70,8 @@
 }
 
 .title {
+	font-family: Lora, serif;
+
 	line-height: 20px;
 	padding: 0;
 
@@ -77,7 +79,7 @@
 
 	a {
 		color: #495057;
-		font-family: Lora, sans-serif;
+		font-family: Lora, serif;
 		font-size: 18px;
 		font-style: normal;
 		font-weight: 700;
