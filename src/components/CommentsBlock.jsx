@@ -15,7 +15,7 @@ export const CommentsBlock = ({ items, children, isLoading = true }) => {
 	const theme = createTheme({
 		typography: {
 			fontFamily: `Lora,serif`,
-			fontSize: 16
+			fontSize: 17
 		}
 	})
 

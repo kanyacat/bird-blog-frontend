@@ -94,7 +94,11 @@ export const Post = ({
 							{children}
 						</div>
 					)}
-					<ul className={styles.postDetails}>
+					<ul
+						className={clsx(styles.postDetails, {
+							[styles.postDetailsFull]: isFullPost
+						})}
+					>
 						<li>
 							<EyeIcon />
 							<span>{viewsCount}</span>
