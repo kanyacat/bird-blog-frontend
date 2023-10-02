@@ -15,22 +15,14 @@
 .form {
 	width: 100%;
 
-	font-family: Lora, serif;
-
 	button {
-		font-family: Lora, serif;
-
 		background-color: #495057;
 		margin-top: 10px;
 
 		transition: background-color 0.1s linear;
 
 		&:hover {
-			background: #d4a373;
+			background-color: #d4a373;
 		}
-	}
-
-	.field {
-		font-family: Lora, serif !important;
 	}
 }

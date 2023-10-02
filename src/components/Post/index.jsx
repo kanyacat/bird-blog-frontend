@@ -27,7 +27,8 @@ export const Post = ({
 	children,
 	isFullPost,
 	isLoading,
-	isEditable
+	isEditable,
+	isPopulatePost
 }) => {
 	const dispatch = useDispatch()
 	if (isLoading) {
@@ -48,10 +49,20 @@ export const Post = ({
 	})
 
 	return (
-		<div className={clsx(styles.root, { [styles.rootFull]: isFullPost })}>
+		<div
+			className={clsx(
+				styles.root,
+				{ [styles.rootFull]: isFullPost },
+				{ [styles.rootPopulate]: isPopulatePost }
+			)}
+		>
 			{isEditable && (
 				<ThemeProvider theme={theme}>
-					<div className={styles.editButtons}>
+					<div
+						className={clsx(styles.editButtons, {
+							[styles.editButtonsPopulate]: isPopulatePost
+						})}
+					>
 						<Link to={`/posts/${id}/edit`}>
 							<IconButton color='primary'>
 								<EditIcon />
@@ -65,16 +76,34 @@ export const Post = ({
 			)}
 			{imageUrl && (
 				<img
-					className={clsx(styles.image, { [styles.imageFull]: isFullPost })}
+					className={clsx(
+						styles.image,
+						{ [styles.imageFull]: isFullPost },
+						{ [styles.imagePopulate]: isPopulatePost }
+					)}
 					src={imageUrl}
 					alt={title}
 				/>
 			)}
-			<div className={styles.wrapper}>
-				<UserInfo {...user} additionalText={createdAt} />
-				<div className={styles.indention}>
+			<div
+				className={clsx(styles.wrapper, {
+					[styles.wrapperPopulate]: isPopulatePost
+				})}
+			>
+				<span
+					className={clsx(styles.userInfo, {
+						[styles.userInfoPopulate]: isPopulatePost
+					})}
+				>
+					<UserInfo {...user} additionalText={createdAt} isPopulatePost />
+				</span>
+				<div>
 					<h2
-						className={clsx(styles.title, { [styles.titleFull]: isFullPost })}
+						className={clsx(
+							styles.title,
+							{ [styles.titleFull]: isFullPost },
+							{ [styles.titlePopulate]: isPopulatePost }
+						)}
 					>
 						{isFullPost ? title : <Link to={`/posts/${id}`}>{title}</Link>}
 					</h2>
@@ -87,17 +116,25 @@ export const Post = ({
 					</ul>
 					{children && (
 						<div
-							className={clsx(styles.content, {
-								[styles.contentFull]: isFullPost
-							})}
+							className={clsx(
+								styles.content,
+								{
+									[styles.contentFull]: isFullPost
+								},
+								{ [styles.contentPopulate]: isPopulatePost }
+							)}
 						>
 							{children}
 						</div>
 					)}
 					<ul
-						className={clsx(styles.postDetails, {
-							[styles.postDetailsFull]: isFullPost
-						})}
+						className={clsx(
+							styles.postDetails,
+							{
+								[styles.postDetailsFull]: isFullPost
+							},
+							{ [styles.postDetailsPopulate]: isPopulatePost }
+						)}
 					>
 						<li>
 							<EyeIcon />

@@ -1,10 +1,13 @@
 import styles from './Main.module.scss'
 import { Link } from 'react-router-dom'
 import Container from '@mui/material/Container'
+import clsx from 'clsx'
 
-export const Main = () => {
+export const Main = props => {
+	const { isBottom } = props
+
 	return (
-		<div className={styles.root}>
+		<div className={clsx(styles.root, { [styles.rootBottom]: isBottom })}>
 			<div className={styles.text}>
 				<Container maxWidth='lg'>
 					<Link to='/tag/love' className={styles.tag}>

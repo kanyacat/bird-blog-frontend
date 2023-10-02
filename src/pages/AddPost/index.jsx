@@ -10,6 +10,9 @@ import { useSelector } from 'react-redux'
 import { isAuthSelector } from '../../redux/slices/auth'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import axios from '../../axios'
+import { createTheme } from '@mui/material/styles'
+import { ThemeProvider } from '@mui/material'
+import Container from '@mui/material/Container'
 
 export const AddPost = () => {
 	const { id } = useParams()
@@ -96,74 +99,85 @@ export const AddPost = () => {
 		[]
 	)
 
+	const theme = createTheme({
+		palette: {
+			primary: { main: '#d4a373' },
+			secondary: { main: '#495057' }
+		}
+	})
+
 	if (!window.localStorage.getItem('token') && !isAuth) {
 		return <Navigate to='/' />
 	}
 
 	return (
-		<Paper style={{ padding: 30 }} elevation={0}>
-			<Button
-				style={{ marginRight: 15 }}
-				onClick={() => inputFileRef.current.click()}
-				variant='outlined'
-				size='large'
-			>
-				Загрузить превью
-			</Button>
-			<input
-				ref={inputFileRef}
-				type='file'
-				onChange={handleChangeFile}
-				hidden
-			/>
-			{imageUrl && (
-				<>
+		<Container maxWidth='lg'>
+			<ThemeProvider theme={theme}>
+				<Paper className={styles.root} style={{ padding: 30 }} elevation={0}>
 					<Button
-						variant='contained'
-						color='error'
-						onClick={onClickRemoveImage}
+						style={{ marginRight: 15 }}
+						onClick={() => inputFileRef.current.click()}
+						variant='outlined'
+						size='large'
+						color='primary'
 					>
-						Удалить
+						Загрузить превью
 					</Button>
-					<img
-						className={styles.image}
-						src={`${process.env.REACT_APP_API_URL}${imageUrl}`}
-						alt='Uploaded'
+					<input
+						ref={inputFileRef}
+						type='file'
+						onChange={handleChangeFile}
+						hidden
 					/>
-				</>
-			)}
-			<br />
-			<br />
-			<TextField
-				classes={{ root: styles.title }}
-				variant='standard'
-				placeholder='Заголовок...'
-				value={title}
-				onChange={e => setTitle(e.target.value)}
-				fullWidth
-			/>
-			<TextField
-				classes={{ root: styles.tags }}
-				variant='standard'
-				placeholder='Тэги'
-				value={tags}
-				onChange={e => setTags(e.target.value)}
-				fullWidth
-			/>
-			<SimpleMDE
-				className={styles.editor}
-				value={text}
-				onChange={onChange}
-				options={options}
-			/>
-			<div className={styles.buttons}>
-				<Button onClick={onSubmit} size='large' variant='contained'>
-					{isEditing ? 'Редактировать' : 'Опубликовать'}
-				</Button>
-				<a href='/'>
-					<Button size='large'>Отмена</Button>
-				</a>
-			</div>
-		</Paper>
+					{imageUrl && (
+						<>
+							<Button
+								variant='contained'
+								color='error'
+								size='large'
+								onClick={onClickRemoveImage}
+							>
+								Удалить
+							</Button>
+							<img
+								className={styles.image}
+								src={`${process.env.REACT_APP_API_URL}${imageUrl}`}
+								alt='Uploaded'
+							/>
+						</>
+					)}
+					<TextField
+						classes={{ root: styles.title }}
+						variant='standard'
+						placeholder='Заголовок...'
+						value={title}
+						onChange={e => setTitle(e.target.value)}
+						fullWidth
+					/>
+					<TextField
+						classes={{ root: styles.tags }}
+						variant='standard'
+						placeholder='Тэги'
+						value={tags}
+						onChange={e => setTags(e.target.value)}
+						fullWidth
+					/>
+					<SimpleMDE
+						className={styles.editor}
+						value={text}
+						onChange={onChange}
+						options={options}
+					/>
+					<div className={styles.buttons}>
+						<Button onClick={onSubmit} size='large' variant='contained'>
+							{isEditing ? 'Редактировать' : 'Опубликовать'}
+						</Button>
+						<a href='/'>
+							<Button size='large'>Отмена</Button>
+						</a>
+					</div>
+				</Paper>
+			</ThemeProvider>
+		</Container>
 	)
 }

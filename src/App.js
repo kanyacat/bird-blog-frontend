@@ -1,6 +1,4 @@
-import Container from '@mui/material/Container'
-
-import { Header, Main } from './components'
+import { Header } from './components'
 import { AddPost, FullPost, Home, Login, Registration } from './pages'
 import { Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -19,18 +17,15 @@ function App() {
 	return (
 		<>
 			<Header />
-			<Main />
-			<Container maxWidth='lg'>
-				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/posts/:id' element={<FullPost />} />
-					<Route path='/posts/:id/edit' element={<AddPost />} />
-					<Route path='/tag/:tag' element={<PostsByTag />} />
-					<Route path='/add-post' element={<AddPost />} />
-					<Route path='/login' element={<Login />} />
-					<Route path='/register' element={<Registration />} />
-				</Routes>
-			</Container>
+			<Routes>
+				<Route path='/' element={<Home />} />
+				<Route path='/posts/:id' element={<FullPost />} />
+				<Route path='/posts/:id/edit' element={<AddPost />} />
+				<Route path='/tag/:tag' element={<PostsByTag />} />
+				<Route path='/add-post' element={<AddPost />} />
+				<Route path='/login' element={<Login />} />
+				<Route path='/register' element={<Registration />} />
+			</Routes>
 		</>
 	)
 }

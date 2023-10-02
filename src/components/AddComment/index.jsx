@@ -64,7 +64,11 @@ export const Index = user => {
 							InputLabelProps={{ style: { fontFamily: 'Lora, serif' } }}
 						/>
 					</ThemeProvider>
-					<Button onClick={onSubmit} variant='contained'>
+					<Button
+						onClick={onSubmit}
+						variant='contained'
+						style={{ fontFamily: 'Roboto, serif' }}
+					>
 						Отправить
 					</Button>
 				</div>

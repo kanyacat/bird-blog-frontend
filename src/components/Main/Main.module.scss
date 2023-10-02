@@ -10,6 +10,27 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
+
+	&Bottom {
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+
+		background: url('https://pofoto.club/uploads/posts/2021-12/1640341743_1-pofoto-club-p-foto-vorobev-na-vetke-1.jpg')
+			center/cover no-repeat;
+
+		.text {
+			width: 60%;
+			h2 {
+				width: 100%;
+			}
+
+			p {
+				width: 100%;
+			}
+		}
+	}
 }
 
 .text {
