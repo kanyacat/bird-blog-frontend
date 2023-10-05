@@ -33,8 +33,8 @@ export const Footer = () => {
 							<div className={styles.social}>
 								<a href=''>111111</a>
 								<a href=''>222222</a>
-								<a href=''>33333</a>
-								<a href=''>44444</a>
+								<a href=''>3333333</a>
+								<a href=''>4444444</a>
 							</div>
 						</div>
 					</div>
