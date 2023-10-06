@@ -1,10 +1,19 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from '../../axios'
 
-export const fetchPosts = createAsyncThunk(
-	'posts/fetchPosts',
-	async sortProperty => {
-		const { data } = await axios.get('/posts', { params: sortProperty })
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async params => {
+	const { data } = await axios.get('/posts', {
+		params: params
+	})
+	return data
+})
+
+export const fetchLastPosts = createAsyncThunk(
+	'posts/fetchPopularPosts',
+	async params => {
+		const { data } = await axios.get('/posts', {
+			params: params
+		})
 		return data
 	}
 )
@@ -40,6 +49,10 @@ const initialState = {
 		items: [],
 		status: 'loading'
 	},
+	lastPosts: {
+		items: [],
+		status: 'loading'
+	},
 	tags: {
 		items: [],
 		status: 'loading'
@@ -71,6 +84,19 @@ const postsSlice = createSlice({
 		[fetchPosts.rejected]: (state, action) => {
 			state.posts.items = []
 			state.posts.status = 'error'
+		},
+		//получение популярных статей
+		[fetchLastPosts.pending]: state => {
+			state.lastPosts.items = []
+			state.lastPosts.status = 'loading'
+		},
+		[fetchLastPosts.fulfilled]: (state, action) => {
+			state.lastPosts.items = action.payload
+			state.lastPosts.status = 'success'
+		},
+		[fetchLastPosts.rejected]: (state, action) => {
+			state.lastPosts.items = []
+			state.lastPosts.status = 'error'
 		},
 		//получение постов по тегу
 		[fetchPostsByTag.pending]: state => {
