@@ -1,0 +1,158 @@
+.swiper {
+	height: 600px;
+	width: 100%;
+
+	--swiper-theme-color: white;
+
+	button {
+		color: white;
+		background-color: white;
+	}
+}
+
+.swiper-button-next {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%234c71ae'%2F%3E%3C%2Fsvg%3E") !important;
+}
+
+.swiperSlide {
+	/* Center slide text vertically */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:nth-child(1) {
+		background: url('https://kipmu.ru/wp-content/uploads/2021/08/sknpt.jpg')
+			center/cover no-repeat;
+	}
+
+	&:nth-child(2) {
+		background: url('https://gorodprizrak.com/wp-content/uploads/2023/06/a726548c7e1e7af3e4f094b4a77e102a.jpg')
+			center/cover no-repeat;
+	}
+
+	&:nth-child(3) {
+		background: url('https://krasivosti.pro/uploads/posts/2022-09/1663062755_13-krasivosti-pro-p-yashcheritsa-glukhar-instagram-29.jpg')
+			center/cover no-repeat;
+	}
+
+	&:nth-child(4) {
+		background: url('https://w.forfun.com/fetch/a6/a616bb7b050285232122ee0bc670641d.jpeg')
+			center/cover no-repeat;
+	}
+
+	&:nth-child(5) {
+		background: url('https://pofoto.club/uploads/posts/2022-01/1641615054_40-pofoto-club-p-ptits-sdelannie-mnoi-foto-69.jpg')
+			center/cover no-repeat;
+	}
+
+	&Bottom {
+		&:nth-child(1) {
+			background: url('https://pofoto.club/uploads/posts/2021-12/1640341743_1-pofoto-club-p-foto-vorobev-na-vetke-1.jpg')
+				center/cover no-repeat;
+		}
+
+		&:nth-child(2) {
+			background: url('https://i.artfile.ru/1981x1090_813964_[www.ArtFile.ru].jpg')
+				center/cover no-repeat;
+		}
+
+		&:nth-child(3) {
+			background: url('https://rspb.org.uk/globalassets/images/wildlife/birds/nightjar/nightjar.jpg')
+				center/cover no-repeat;
+		}
+
+		&:nth-child(4) {
+			background: url('https://w.forfun.com/fetch/a4/a4dfa3180e9f09dee9569e289a65d4e8.jpeg')
+				center/cover no-repeat;
+		}
+
+		&:nth-child(5) {
+			background: url('https://i.pinimg.com/originals/22/01/2f/22012f436cafad3c8fc7daa57faceea9.jpg')
+				center/cover no-repeat;
+		}
+	}
+}
+
+.root {
+	margin: 0 0 50px 0;
+	padding: 100px 0;
+
+	height: 600px;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	&Bottom {
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+
+		.text {
+			width: 60%;
+			h2 {
+				width: 100%;
+			}
+
+			p {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.text {
+	color: #fff;
+	font-family: Lora, serif;
+
+	.tag {
+		padding: 5px 10px;
+
+		font-family: Roboto, 'sans-serif';
+		text-transform: uppercase;
+		color: #fff;
+		font-weight: 700;
+
+		border-radius: 8px;
+		background: rgba(255, 255, 255, 0.15);
+
+		text-decoration: none;
+	}
+
+	.title {
+		width: 50%;
+
+		font-size: 36px;
+		font-weight: 700;
+		line-height: 1.35;
+
+		&Bottom {
+			margin: 10px 0 0 0;
+		}
+	}
+
+	span {
+		width: 100%;
+	}
+
+	p {
+		width: 40%;
+
+		color: #e5e5e5;
+		font-family: Lora, serif;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 20px; /* 166.667% */
+	}
+
+	.text {
+		margin-bottom: 140px;
+
+		&Bottom {
+			margin-bottom: -10px;
+		}
+	}
+}

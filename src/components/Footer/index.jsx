@@ -18,7 +18,10 @@ export const Footer = () => {
 							<a href=''>О нас</a>
 							<a href=''>Наши проекты</a>
 							<a href=''>Партнеры</a>
-							<a href='https://www.figma.com/file/rI3ISotdjRjudr3VlKx1oN/RUNO-Minimal-Blog-Template-(Community)?type=design&t=Wsoybicuo9JGvspL-6'>
+							<a
+								target={'_blank'}
+								href='https://www.figma.com/file/rI3ISotdjRjudr3VlKx1oN/RUNO-Minimal-Blog-Template-(Community)?type=design&t=Wsoybicuo9JGvspL-6'
+							>
 								Макет сайта
 							</a>
 						</div>

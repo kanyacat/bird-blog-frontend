@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import { Footer, Main, Post, TagsBlock } from '../../components'
+import { Footer, Post, Slider, TagsBlock } from '../../components'
 import { useDispatch, useSelector } from 'react-redux'
 import {
 	fetchComments,
@@ -29,7 +29,7 @@ export const Home = () => {
 
 	return (
 		<>
-			<Main isBottom={false} />
+			<Slider isBottom={false} />
 			<Container maxWidth='lg'>
 				<h1>Популярные статьи</h1>
 				<TagsBlock items={tags.items} isLoading={isTagsLoading} />
@@ -60,7 +60,7 @@ export const Home = () => {
 					)}
 				</div>
 			</Container>
-			<Main isBottom={true} />
+			<Slider isBottom={true} />
 			<Container maxWidth='lg'>
 				<h1>Последние статьи</h1>
 				<div className={styles.posts}>
