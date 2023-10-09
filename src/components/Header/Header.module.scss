@@ -26,7 +26,7 @@
 	text-transform: uppercase;
 	text-decoration: none;
 
-	transition: color 0.1s linear;
+	transition: color 0.2s linear;
 
 	&:hover {
 		color: #e5e5e5; //ПОМЕНЯТЬ
@@ -50,7 +50,7 @@
 
 		cursor: pointer;
 
-		transition: color 0.1s linear;
+		transition: color 0.2s linear;
 
 		&:hover,
 		&:active,
@@ -74,7 +74,7 @@
 		background: #d4a373;
 		opacity: 0;
 
-		transition: opacity 0.1s linear;
+		transition: opacity 0.2s linear;
 	}
 
 	.nav:hover:after,

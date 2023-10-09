@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Footer.module.scss'
 import Container from '@mui/material/Container'
+import { Link } from 'react-router-dom'
 
 export const Footer = () => {
 	return (
@@ -15,9 +16,9 @@ export const Footer = () => {
 						</div>
 						<div className={styles.block}>
 							<h2>О сервисе</h2>
-							<a href=''>О нас</a>
-							<a href=''>Наши проекты</a>
-							<a href=''>Партнеры</a>
+							<Link to='/'>О нас</Link>
+							<Link to={'/'}>Наши проекты</Link>
+							<Link to={'/'}>Партнеры</Link>
 							<a
 								target={'_blank'}
 								href='https://www.figma.com/file/rI3ISotdjRjudr3VlKx1oN/RUNO-Minimal-Blog-Template-(Community)?type=design&t=Wsoybicuo9JGvspL-6'
@@ -34,7 +35,7 @@ export const Footer = () => {
 						<div className={styles.block}>
 							<h2>Социальные сети</h2>
 							<div className={styles.social}>
-								<a href='#'>
+								<Link to={'/'}>
 									<svg
 										width='30'
 										height='30'
@@ -49,8 +50,8 @@ export const Footer = () => {
 											fill='#E5E5E5'
 										/>
 									</svg>
-								</a>
-								<a href=''>
+								</Link>
+								<Link to='/'>
 									<svg
 										width='30'
 										height='30'
@@ -71,8 +72,8 @@ export const Footer = () => {
 											fill='#E5E5E5'
 										/>
 									</svg>
-								</a>
-								<a href=''>
+								</Link>
+								<Link to='/'>
 									<svg
 										width='30'
 										height='30'
@@ -89,8 +90,8 @@ export const Footer = () => {
 											fill='#E5E5E5'
 										/>
 									</svg>
-								</a>
-								<a href=''>
+								</Link>
+								<Link to='/'>
 									<svg
 										width='30'
 										height='30'
@@ -120,7 +121,7 @@ export const Footer = () => {
 											</linearGradient>
 										</defs>
 									</svg>
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>

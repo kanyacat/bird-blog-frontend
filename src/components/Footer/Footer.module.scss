@@ -34,7 +34,7 @@
 
 				text-decoration: none;
 
-				transition: color 0.1s linear;
+				transition: color 0.2s linear;
 
 				&:hover {
 					color: #d4a373;
@@ -63,6 +63,46 @@
 				a {
 					margin-right: 18px;
 				}
+			}
+		}
+	}
+}
+
+//svg
+a:nth-child(1),
+a:nth-child(4) {
+	&:hover {
+		path {
+			transition: fill 0.2s linear;
+
+			&:nth-child(1),
+			&:nth-child(3) {
+				fill: #d4a373;
+			}
+		}
+	}
+}
+
+a:nth-child(2) {
+	&:hover {
+		path {
+			transition: fill 0.2s linear;
+
+			&:nth-child(1),
+			&:nth-child(3) {
+				fill: #d4a373;
+			}
+		}
+	}
+}
+
+a:nth-child(3) {
+	&:hover {
+		path {
+			transition: fill 0.2s linear;
+
+			&:nth-child(2) {
+				fill: #d4a373;
 			}
 		}
 	}

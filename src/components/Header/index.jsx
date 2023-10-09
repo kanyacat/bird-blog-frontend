@@ -22,17 +22,17 @@ export const Header = () => {
 			<Container maxWidth='lg'>
 				<div className={styles.inner}>
 					<Link className={styles.logo} to='/'>
-						<div>BLOG</div>
+						<div>BIRD BLOG</div>
 					</Link>
 					<div className={styles.buttons}>
 						<Link to='/' className={styles.nav}>
 							Главная
 						</Link>
 						<Link to='/' className={styles.nav}>
-							О нас
+							Все статьи
 						</Link>
 						<Link to='/' className={styles.nav}>
-							Что-то еще
+							О нас
 						</Link>
 						<span className={styles.line}>|</span>
 						{isAuth ? (
