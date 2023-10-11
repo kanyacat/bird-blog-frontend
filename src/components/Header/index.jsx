@@ -31,7 +31,7 @@ export const Header = () => {
 						<Link to='/' className={styles.nav}>
 							Все статьи
 						</Link>
-						<Link to='/' className={styles.nav}>
+						<Link to='/about' className={styles.nav}>
 							О нас
 						</Link>
 						<span className={styles.line}>|</span>

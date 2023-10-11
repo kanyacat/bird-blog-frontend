@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { fetchAuthMe, isAuthSelector } from './redux/slices/auth'
 import { PostsByTag } from './pages/PostsByTag'
+import { AboutUs } from './pages/AboutUs/AboutUs'
 
 function App() {
 	const dispatch = useDispatch()
@@ -25,6 +26,7 @@ function App() {
 				<Route path='/add-post' element={<AddPost />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/register' element={<Registration />} />
+				<Route path='/about' element={<AboutUs />} />
 			</Routes>
 		</>
 	)
