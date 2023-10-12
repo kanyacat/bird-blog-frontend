@@ -5,7 +5,7 @@ import styles from './TagsBlock.module.scss'
 export const TagsBlock = ({ items, isLoading = true }) => {
 	return (
 		<ul className={styles.root}>
-			<Link className={styles.link} to={`/`}>
+			<Link className={styles.link} to={`/posts`}>
 				<li>Все статьи</li>
 			</Link>
 			{(isLoading ? [...Array(5)] : items).map((name, i) => (
@@ -15,41 +15,4 @@ export const TagsBlock = ({ items, isLoading = true }) => {
 			))}
 		</ul>
 	)
-}
-
-{
-	/*<ListItem key={i} disablePadding>*/
-}
-{
-	/*	<ListItemButton>*/
-}
-{
-	/*		<ListItemIcon>*/
-}
-{
-	/*			<TagIcon />*/
-}
-{
-	/*		</ListItemIcon>*/
-}
-{
-	/*		{isLoading ? (*/
-}
-{
-	/*			<Skeleton width={100} />*/
-}
-{
-	/*		) : (*/
-}
-{
-	/*			<ListItemText primary={name} />*/
-}
-{
-	/*		)}*/
-}
-{
-	/*	</ListItemButton>*/
-}
-{
-	/*</ListItem>*/
 }

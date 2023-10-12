@@ -1,0 +1,21 @@
+.root {
+	padding-top: 50px;
+}
+
+h1 {
+	font-family: Lora, serif;
+
+	color: #495057;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.posts {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	align-items: center;
+}

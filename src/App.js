@@ -4,8 +4,8 @@ import { Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { fetchAuthMe, isAuthSelector } from './redux/slices/auth'
-import { PostsByTag } from './pages/PostsByTag'
 import { AboutUs } from './pages/AboutUs/AboutUs'
+import { AllPosts } from './pages/AllPosts/AllPosts'
 
 function App() {
 	const dispatch = useDispatch()
@@ -20,9 +20,10 @@ function App() {
 			<Header />
 			<Routes>
 				<Route path='/' element={<Home />} />
+				<Route path='/posts/' element={<AllPosts />} />
 				<Route path='/posts/:id' element={<FullPost />} />
 				<Route path='/posts/:id/edit' element={<AddPost />} />
-				<Route path='/tag/:tag' element={<PostsByTag />} />
+				<Route path='/tag/:tag' element={<AllPosts />} />
 				<Route path='/add-post' element={<AddPost />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/register' element={<Registration />} />

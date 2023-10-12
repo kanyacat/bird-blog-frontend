@@ -17,7 +17,7 @@ export const Footer = () => {
 						<div className={styles.block}>
 							<h2>О сервисе</h2>
 							<Link to='/about'>О нас</Link>
-							<Link to={'/'}>Список статей</Link>
+							<Link to={'/posts'}>Список статей</Link>
 							<a
 								target={'_blank'}
 								href='https://www.figma.com/file/rI3ISotdjRjudr3VlKx1oN/RUNO-Minimal-Blog-Template-(Community)?type=design&t=Wsoybicuo9JGvspL-6'

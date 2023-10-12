@@ -2,12 +2,7 @@ import React, { useEffect } from 'react'
 
 import { Footer, Post, Slider, TagsBlock } from '../../components'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-	fetchComments,
-	fetchLastPosts,
-	fetchPosts,
-	fetchTags
-} from '../../redux/slices/posts'
+import { fetchLastPosts, fetchPosts, fetchTags } from '../../redux/slices/posts'
 import styles from './Home.module.scss'
 import Container from '@mui/material/Container'
 
@@ -24,7 +19,6 @@ export const Home = () => {
 		dispatch(fetchLastPosts({ sortProperty: 'createdAt', limit: 3 }))
 
 		dispatch(fetchTags())
-		dispatch(fetchComments())
 	}, [])
 
 	return (
