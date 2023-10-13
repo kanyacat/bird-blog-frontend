@@ -11,6 +11,14 @@ export const AboutUs = () => {
 				<h1>О BIRD BLOG</h1>
 			</div>
 			<Container maxWidth='lg'>
+				<div>
+					<h1 className={styles.title}>Мы действительно любим птиц</h1>
+					<p className={styles.subtext}>
+						Станьте частью дружного сообщества, открывайте для себя новую
+						информацию о птицах, пишите уникальные статьи, изучайте материалы и
+						обсуждайте их с другими!
+					</p>
+				</div>
 				<div className={styles.info}>
 					<div className={styles.block}>
 						<div className={styles.text}>
@@ -80,7 +88,11 @@ export const AboutUs = () => {
 						/>
 					</div>
 				</div>
+				<h1 className={styles.title}>
+					<p> СТАНЬ ЧАСТЬЮ НАШЕЙ ДРУЖНОЙ СЕМЬИ ПТИЦЕЛЮБОВ</p>
+				</h1>
 			</Container>
+
 			<Footer />
 		</div>
 	)
