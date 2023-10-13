@@ -111,73 +111,75 @@ export const AddPost = () => {
 	}
 
 	return (
-		<Container maxWidth='lg'>
-			<ThemeProvider theme={theme}>
-				<Paper className={styles.root} style={{ padding: 30 }} elevation={0}>
-					<Button
-						style={{ marginRight: 15 }}
-						onClick={() => inputFileRef.current.click()}
-						variant='outlined'
-						size='large'
-						color='primary'
-					>
-						Загрузить превью
-					</Button>
-					<input
-						ref={inputFileRef}
-						type='file'
-						onChange={handleChangeFile}
-						hidden
-					/>
-					{imageUrl && (
-						<>
-							<Button
-								variant='contained'
-								color='error'
-								size='large'
-								onClick={onClickRemoveImage}
-							>
-								Удалить
-							</Button>
-							<img
-								className={styles.image}
-								src={`${process.env.REACT_APP_API_URL}${imageUrl}`}
-								alt='Uploaded'
-							/>
-						</>
-					)}
-					<TextField
-						classes={{ root: styles.title }}
-						variant='standard'
-						placeholder='Заголовок...'
-						value={title}
-						onChange={e => setTitle(e.target.value)}
-						fullWidth
-					/>
-					<TextField
-						classes={{ root: styles.tags }}
-						variant='standard'
-						placeholder='Тэги'
-						value={tags}
-						onChange={e => setTags(e.target.value)}
-						fullWidth
-					/>
-					<SimpleMDE
-						className={styles.editor}
-						value={text}
-						onChange={onChange}
-						options={options}
-					/>
-					<div className={styles.buttons}>
-						<Button onClick={onSubmit} size='large' variant='contained'>
-							{isEditing ? 'Редактировать' : 'Опубликовать'}
+		<div className={styles.body}>
+			<Container maxWidth='lg'>
+				<ThemeProvider theme={theme}>
+					<Paper className={styles.root} style={{ padding: 30 }} elevation={0}>
+						<Button
+							style={{ marginRight: 15 }}
+							onClick={() => inputFileRef.current.click()}
+							variant='outlined'
+							size='large'
+							color='primary'
+						>
+							Загрузить превью
 						</Button>
-						<a href='/'>
-							<Button size='large'>Отмена</Button>
-						</a>
-					</div>
-				</Paper>
-			</ThemeProvider>
-		</Container>
+						<input
+							ref={inputFileRef}
+							type='file'
+							onChange={handleChangeFile}
+							hidden
+						/>
+						{imageUrl && (
+							<>
+								<Button
+									variant='contained'
+									color='error'
+									size='large'
+									onClick={onClickRemoveImage}
+								>
+									Удалить
+								</Button>
+								<img
+									className={styles.image}
+									src={`${process.env.REACT_APP_API_URL}${imageUrl}`}
+									alt='Uploaded'
+								/>
+							</>
+						)}
+						<TextField
+							classes={{ root: styles.title }}
+							variant='standard'
+							placeholder='Заголовок...'
+							value={title}
+							onChange={e => setTitle(e.target.value)}
+							fullWidth
+						/>
+						<TextField
+							classes={{ root: styles.tags }}
+							variant='standard'
+							placeholder='Тэги'
+							value={tags}
+							onChange={e => setTags(e.target.value)}
+							fullWidth
+						/>
+						<SimpleMDE
+							className={styles.editor}
+							value={text}
+							onChange={onChange}
+							options={options}
+						/>
+						<div className={styles.buttons}>
+							<Button onClick={onSubmit} size='large' variant='contained'>
+								{isEditing ? 'Редактировать' : 'Опубликовать'}
+							</Button>
+							<a href='/'>
+								<Button size='large'>Отмена</Button>
+							</a>
+						</div>
+					</Paper>
+				</ThemeProvider>
+			</Container>
+		</div>
 	)
 }

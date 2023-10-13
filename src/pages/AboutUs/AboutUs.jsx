@@ -10,7 +10,7 @@ export const AboutUs = () => {
 			<div className={styles.main}>
 				<h1>О BIRD BLOG</h1>
 			</div>
-			<Container maxWidth='lg'>
+			<Container maxWidth='lg' className={styles.container}>
 				<div>
 					<h1 className={styles.title}>Мы действительно любим птиц</h1>
 					<p className={styles.subtext}>

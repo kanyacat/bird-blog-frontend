@@ -25,7 +25,7 @@ export const Home = () => {
 		<>
 			<Slider isBottom={false} />
 			<Container maxWidth='lg'>
-				<h1>Популярные статьи</h1>
+				<h1 className={styles.title}>Популярные статьи</h1>
 				<TagsBlock items={tags.items} isLoading={isTagsLoading} />
 				<div className={styles.posts}>
 					{(isPostsLoading ? [...Array(8)] : posts.items).map((obj, index) =>
@@ -56,7 +56,7 @@ export const Home = () => {
 			</Container>
 			<Slider isBottom={true} />
 			<Container maxWidth='lg'>
-				<h1>Последние статьи</h1>
+				<h1 className={styles.title}>Последние статьи</h1>
 				<div className={styles.posts}>
 					{(isPostsLoading ? [...Array(3)] : lastPosts.items).map(
 						(obj, index) =>
