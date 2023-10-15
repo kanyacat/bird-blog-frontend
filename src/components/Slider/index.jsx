@@ -8,7 +8,6 @@ import 'swiper/css/navigation'
 
 import styles from './Slider.module.scss'
 import Container from '@mui/material/Container'
-import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 
 export const Slider = props => {
@@ -38,12 +37,6 @@ export const Slider = props => {
 					<div className={clsx(styles.root, { [styles.rootBottom]: isBottom })}>
 						<div className={styles.text}>
 							<Container maxWidth='lg'>
-								<Link
-									to='/tag/love'
-									className={clsx(styles.tag, { [styles.tagBottom]: isBottom })}
-								>
-									#love
-								</Link>
 								{isBottom ? (
 									<>
 										<h2
@@ -99,12 +92,6 @@ export const Slider = props => {
 					<div className={clsx(styles.root, { [styles.rootBottom]: isBottom })}>
 						<div className={styles.text}>
 							<Container maxWidth='lg'>
-								<Link
-									to='/tag/love'
-									className={clsx(styles.tag, { [styles.tagBottom]: isBottom })}
-								>
-									#love
-								</Link>
 								{isBottom ? (
 									<>
 										<h2
@@ -112,7 +99,7 @@ export const Slider = props => {
 												[styles.titleBottom]: isBottom
 											})}
 										>
-											Исследуйте увлекательный мир птиц на нашей платформе
+											Изучите удивительный мир птиц на нашей платформе
 										</h2>
 
 										<p
@@ -160,12 +147,6 @@ export const Slider = props => {
 					<div className={clsx(styles.root, { [styles.rootBottom]: isBottom })}>
 						<div className={styles.text}>
 							<Container maxWidth='lg'>
-								<Link
-									to='/tag/love'
-									className={clsx(styles.tag, { [styles.tagBottom]: isBottom })}
-								>
-									#love
-								</Link>
 								{isBottom ? (
 									<>
 										<h2
@@ -223,12 +204,6 @@ export const Slider = props => {
 					<div className={clsx(styles.root, { [styles.rootBottom]: isBottom })}>
 						<div className={styles.text}>
 							<Container maxWidth='lg'>
-								<Link
-									to='/tag/love'
-									className={clsx(styles.tag, { [styles.tagBottom]: isBottom })}
-								>
-									#love
-								</Link>
 								{isBottom ? (
 									<>
 										<h2
@@ -284,12 +259,6 @@ export const Slider = props => {
 					<div className={clsx(styles.root, { [styles.rootBottom]: isBottom })}>
 						<div className={styles.text}>
 							<Container maxWidth='lg'>
-								<Link
-									to='/tag/love'
-									className={clsx(styles.tag, { [styles.tagBottom]: isBottom })}
-								>
-									#love
-								</Link>
 								{isBottom ? (
 									<>
 										<h2

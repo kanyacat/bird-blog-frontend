@@ -12,6 +12,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+
+	@media screen and (max-width: 640px) {
+		justify-content: center;
+	}
 }
 
 .logo {
@@ -31,9 +35,20 @@
 	&:hover {
 		color: #e5e5e5; //ПОМЕНЯТЬ
 	}
+
+	@media screen and (max-width: 640px) {
+		display: none;
+	}
 }
 
 .buttons {
+	display: flex;
+	align-items: center;
+
+	@media screen and (max-width: 490px) {
+		flex-direction: column;
+	}
+
 	.nav {
 		position: relative;
 		margin-left: 25px;
@@ -57,6 +72,14 @@
 		&:focus {
 			color: #fff;
 			outline: none;
+		}
+
+		@media screen and (max-width: 540px) {
+			font-size: 13px;
+		}
+
+		@media screen and (max-width: 490px) {
+			font-size: 14px;
 		}
 	}
 
@@ -87,6 +110,10 @@
 	.line {
 		margin-left: 25px;
 		color: #e5e5e5;
+
+		@media screen and (max-width: 490px) {
+			display: none;
+		}
 	}
 
 	a {

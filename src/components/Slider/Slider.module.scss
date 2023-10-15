@@ -8,6 +8,14 @@
 		color: white;
 		background-color: white;
 	}
+
+	@media screen and (max-width: 660px) {
+		height: 500px;
+	}
+
+	@media screen and (max-width: 400px) {
+		height: 400px;
+	}
 }
 
 .swiper-button-next {
@@ -84,6 +92,51 @@
 	flex-direction: column;
 	justify-content: flex-end;
 
+	@media screen and (max-width: 910px) {
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		margin: 0 0 -20vh 0;
+
+		.text {
+			width: 80%;
+
+			h2 {
+				font-size: 40px;
+				width: 100%;
+			}
+
+			p {
+				width: 100%;
+			}
+		}
+	}
+
+	@media screen and (max-width: 660px) {
+		margin: 0 0 -5vh 0;
+
+		.text {
+			width: 80%;
+
+			h2 {
+				font-size: 35px;
+			}
+
+			p {
+				display: none;
+			}
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		.text {
+			h2 {
+				font-size: 30px;
+			}
+		}
+	}
+
 	&Bottom {
 		text-align: center;
 		justify-content: center;
@@ -98,6 +151,16 @@
 
 			p {
 				width: 100%;
+			}
+		}
+
+		@media screen and (max-width: 910px) {
+			margin: 0 0 -5vh 0;
+		}
+
+		@media screen and (max-width: 660px) {
+			.text {
+				width: 90%;
 			}
 		}
 	}

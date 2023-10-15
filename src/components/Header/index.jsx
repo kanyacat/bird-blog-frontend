@@ -25,34 +25,36 @@ export const Header = () => {
 						<div>BIRD BLOG</div>
 					</Link>
 					<div className={styles.buttons}>
-						<Link to='/' className={styles.nav}>
-							Главная
-						</Link>
-						<Link to='/posts' className={styles.nav}>
-							Все статьи
-						</Link>
-						<Link to='/about' className={styles.nav}>
-							О нас
-						</Link>
+						<div className={styles.links}>
+							<Link to='/' className={styles.nav}>
+								Главная
+							</Link>
+							<Link to='/posts' className={styles.nav}>
+								Все статьи
+							</Link>
+							<Link to='/about' className={styles.nav}>
+								О нас
+							</Link>
+						</div>
 						<span className={styles.line}>|</span>
 						{isAuth ? (
-							<>
+							<div className={styles.auth}>
 								<Link to='/add-post' className={styles.nav}>
 									Написать статью
 								</Link>
 								<button onClick={onClickLogout} className={styles.nav}>
 									Выйти
 								</button>
-							</>
+							</div>
 						) : (
-							<>
+							<div className={styles.auth}>
 								<Link to='/login' className={styles.nav}>
 									Войти
 								</Link>
 								<Link to='/register' className={styles.nav}>
 									Создать аккаунт
 								</Link>
-							</>
+							</div>
 						)}
 					</div>
 				</div>
