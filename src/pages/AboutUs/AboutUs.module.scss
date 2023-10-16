@@ -11,13 +11,23 @@
 	height: 490px;
 	width: 100%;
 	background: url('https://celes.club/uploads/posts/2021-12/1639458448_35-celes-club-p-malenkaya-cherno-belaya-ptichka-ptitsi-kra-36.jpg')
-		center/cover no-repeat;
+		top/cover no-repeat;
 
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 
 	text-align: center;
+
+	@media screen and (max-width: 1000px) {
+		height: 400px;
+	}
+
+	@media screen and (max-width: 635px) {
+		height: 300px;
+
+		margin-bottom: 35px;
+	}
 
 	h1 {
 		font-family: Georgia, serif;
@@ -27,6 +37,10 @@
 		font-weight: 700;
 		text-transform: uppercase;
 		margin-bottom: 20px;
+
+		@media screen and (max-width: 545px) {
+			font-size: 55px;
+		}
 	}
 }
 
@@ -50,6 +64,19 @@
 	p {
 		margin-top: 100px;
 		margin-bottom: 50px;
+
+		@media screen and (max-width: 635px) {
+			margin-top: 50px;
+			margin-bottom: 45px;
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		font-size: 35px;
+	}
+
+	@media screen and (max-width: 475px) {
+		font-size: 30px;
 	}
 }
 
@@ -62,6 +89,14 @@
 	width: 90%;
 
 	text-align: center;
+
+	@media screen and (max-width: 1000px) {
+		font-size: 14px;
+	}
+
+	@media screen and (max-width: 635px) {
+		margin-bottom: 25px;
+	}
 }
 
 .info {
@@ -74,12 +109,33 @@
 
 		margin-bottom: 50px;
 
+		@media screen and (max-width: 635px) {
+			margin-bottom: 25px;
+		}
+
 		img {
-			width: 410px;
+			width: 38%;
 			height: 320px;
 			object-fit: cover;
 
 			border-radius: 5px;
+
+			@media screen and (max-width: 635px) {
+				width: 100%;
+				margin-bottom: 15px;
+			}
+		}
+
+		&:nth-child(2) {
+			@media screen and (max-width: 635px) {
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+
+		@media screen and (max-width: 635px) {
+			flex-direction: column-reverse;
+			align-items: center;
 		}
 
 		.text {
@@ -91,19 +147,32 @@
 
 				color: #23282b;
 				margin: 0;
-				margin-bottom: 15px;
+				margin-bottom: 10px;
 
 				font-size: 26px;
 				font-style: normal;
 				font-weight: 700;
 				line-height: normal;
+
+				@media screen and (max-width: 1000px) {
+					font-size: 20px;
+				}
+			}
+			@media screen and (max-width: 635px) {
+				width: 100%;
+
+				text-align: center;
 			}
 
 			p {
-				margin: 8px 0;
+				margin: 4px 0;
 
 				font-size: 18px;
 				line-height: 28px;
+
+				@media screen and (max-width: 1000px) {
+					font-size: 14px;
+				}
 			}
 		}
 	}
