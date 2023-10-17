@@ -4,7 +4,6 @@
 
 	border-radius: 10px;
 
-	//width: 280px;
 	width: 24%;
 
 	height: 570px;
@@ -74,6 +73,27 @@
 		&:hover {
 			border: none;
 			box-shadow: none;
+		}
+
+		@media screen and (max-width: 1000px) {
+			padding: 0 60px;
+		}
+
+		@media screen and (max-width: 800px) {
+			padding: 0 40px;
+		}
+
+		@media screen and (max-width: 550px) {
+			padding: 0 15px;
+		}
+
+		@media screen and (max-width: 490px) {
+			padding-top: 25px;
+		}
+
+		@media screen and (max-width: 490px) {
+			padding: 0 5px;
+			padding-top: 25px;
 		}
 	}
 
@@ -184,6 +204,10 @@
 
 		strong {
 			font-size: 25px;
+
+			@media screen and (max-width: 490px) {
+				font-size: 22px;
+			}
 		}
 		p:has(img) {
 			text-align: center;
@@ -200,6 +224,10 @@
 
 				border-radius: 5px;
 			}
+		}
+
+		@media screen and (max-width: 490px) {
+			font-size: 18px;
 		}
 	}
 
@@ -240,6 +268,16 @@
 		font-weight: 900;
 
 		line-height: 1.2;
+
+		@media screen and (max-width: 550px) {
+			margin: 15px 0;
+
+			font-size: 32px;
+		}
+
+		@media screen and (max-width: 490px) {
+			font-size: 25px;
+		}
 	}
 
 	&Populate {
@@ -330,6 +368,22 @@
 
 		bottom: -10px;
 		left: 38px;
+
+		@media screen and (max-width: 1000px) {
+			padding: 0 60px;
+		}
+
+		@media screen and (max-width: 800px) {
+			padding: 0 40px;
+		}
+
+		@media screen and (max-width: 550px) {
+			padding: 0 15px;
+		}
+
+		@media screen and (max-width: 490px) {
+			padding: 0 5px;
+		}
 	}
 
 	&Populate {

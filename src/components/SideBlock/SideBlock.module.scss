@@ -1,5 +1,21 @@
 .root {
 	margin: 10px 120px;
+
+	@media screen and (max-width: 1000px) {
+		margin: 10px 60px;
+	}
+
+	@media screen and (max-width: 800px) {
+		margin: 10px 40px;
+	}
+
+	@media screen and (max-width: 550px) {
+		margin: 10px 15px;
+	}
+
+	@media screen and (max-width: 490px) {
+		margin: 10px 5px;
+	}
 }
 
 .title {

@@ -13,7 +13,6 @@ import { useParams } from 'react-router-dom'
 
 export const AllPosts = () => {
 	const { tag } = useParams()
-	console.log(tag)
 	const userData = useSelector(state => state.auth.data)
 	const { posts, tags } = useSelector(state => state.posts)
 	const dispatch = useDispatch()

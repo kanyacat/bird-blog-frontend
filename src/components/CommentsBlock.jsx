@@ -21,7 +21,7 @@ export const CommentsBlock = ({ items, children, isLoading = true }) => {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<SideBlock title='Комментарии'>
+			<SideBlock title='Комментарии' disableGutters={true}>
 				<List>
 					{(isLoading ? [...Array(5)] : items ? items : [...Array(5)]).map(
 						(obj, index) => (
