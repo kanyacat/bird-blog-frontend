@@ -9,6 +9,8 @@ import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAuth, isAuthSelector } from '../../redux/slices/auth'
 import { Navigate } from 'react-router-dom'
+import { createTheme } from '@mui/material/styles'
+import { ThemeProvider } from '@mui/material'
 
 export const Login = () => {
 	const isAuth = useSelector(isAuthSelector)
@@ -44,40 +46,60 @@ export const Login = () => {
 		return <Navigate to='/' />
 	}
 
+	const theme = createTheme({
+		palette: {
+			primary: { main: '#d4a373' }
+		}
+	})
+
 	return (
-		<Paper classes={{ root: styles.root }} elevation={0}>
-			<Typography classes={{ root: styles.title }} variant='h5'>
-				Вход в аккаунт
-			</Typography>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<TextField
-					className={styles.field}
-					label='E-Mail'
-					type='email'
-					error={Boolean(errors.email?.message)}
-					helperText={errors.email?.message}
-					{...register('email', { required: 'Укажите почту' })}
-					fullWidth
-				/>
-				<TextField
-					className={styles.field}
-					label='Пароль'
-					type='password'
-					error={Boolean(errors.password?.message)}
-					helperText={errors.password?.message}
-					{...register('password', { required: 'Укажите пароль' })}
-					fullWidth
-				/>
-				<Button
-					disabled={!isValid}
-					type='submit'
-					size='large'
-					variant='contained'
-					fullWidth
-				>
-					Войти
-				</Button>
-			</form>
-		</Paper>
+		<div className={styles.body}>
+			<div className={styles.background}>
+				<ThemeProvider theme={theme}>
+					<Paper classes={{ root: styles.root }} elevation={0}>
+						<div className={styles.block}>
+							<Typography classes={{ root: styles.title }} variant='h5'>
+								Вход в аккаунт
+							</Typography>
+							<form onSubmit={handleSubmit(onSubmit)}>
+								<TextField
+									className={styles.field}
+									label='E-Mail'
+									type='email'
+									error={Boolean(errors.email?.message)}
+									helperText={errors.email?.message}
+									{...register('email', { required: 'Укажите почту' })}
+									fullWidth
+								/>
+								<TextField
+									className={styles.field}
+									label='Пароль'
+									type='password'
+									error={Boolean(errors.password?.message)}
+									helperText={errors.password?.message}
+									{...register('password', { required: 'Укажите пароль' })}
+									fullWidth
+								/>
+								<Button
+									disabled={!isValid}
+									type='submit'
+									size='large'
+									variant='contained'
+									fullWidth
+								>
+									Войти
+								</Button>
+							</form>
+						</div>
+						<div className={styles.block}>
+							<img
+								src='https://oir.mobi/uploads/posts/2022-09/1662318764_6-oir-mobi-p-pushistie-ptichki-instagram-9.jpg'
+								alt=''
+							/>
+						</div>
+					</Paper>
+				</ThemeProvider>
+			</div>
+		</div>
 	)
 }

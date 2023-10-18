@@ -58,7 +58,12 @@ export const AddPost = () => {
 		try {
 			setLoading(true)
 
-			const fields = { title, imageUrl, tags: tags.split(','), text }
+			const fields = {
+				title,
+				imageUrl,
+				tags: tags.replaceAll(' ', '').split(','),
+				text
+			}
 
 			const { data } = isEditing
 				? await axios.patch(`/posts/${id}`, fields)
@@ -115,38 +120,41 @@ export const AddPost = () => {
 			<Container maxWidth='lg'>
 				<ThemeProvider theme={theme}>
 					<Paper className={styles.root} style={{ padding: 30 }} elevation={0}>
-						<Button
-							style={{ marginRight: 15 }}
-							onClick={() => inputFileRef.current.click()}
-							variant='outlined'
-							size='large'
-							color='primary'
-						>
-							Загрузить превью
-						</Button>
-						<input
-							ref={inputFileRef}
-							type='file'
-							onChange={handleChangeFile}
-							hidden
-						/>
-						{imageUrl && (
-							<>
-								<Button
-									variant='contained'
-									color='error'
-									size='large'
-									onClick={onClickRemoveImage}
-								>
-									Удалить
-								</Button>
-								<img
-									className={styles.image}
-									src={`${process.env.REACT_APP_API_URL}${imageUrl}`}
-									alt='Uploaded'
-								/>
-							</>
-						)}
+						<div className={styles.buttons}>
+							<Button
+								style={{ marginRight: 15 }}
+								onClick={() => inputFileRef.current.click()}
+								variant='outlined'
+								size='large'
+								color='primary'
+							>
+								Загрузить превью
+							</Button>
+							<input
+								ref={inputFileRef}
+								type='file'
+								onChange={handleChangeFile}
+								hidden
+							/>
+							{imageUrl && (
+								<>
+									<Button
+										variant='contained'
+										color='error'
+										size='large'
+										onClick={onClickRemoveImage}
+									>
+										Удалить
+									</Button>
+									<img
+										className={styles.image}
+										src={`${process.env.REACT_APP_API_URL}${imageUrl}`}
+										alt='Uploaded'
+									/>
+								</>
+							)}
+						</div>
+
 						<TextField
 							classes={{ root: styles.title }}
 							variant='standard'
@@ -170,7 +178,12 @@ export const AddPost = () => {
 							options={options}
 						/>
 						<div className={styles.buttons}>
-							<Button onClick={onSubmit} size='large' variant='contained'>
+							<Button
+								onClick={onSubmit}
+								size='large'
+								variant='contained'
+								style={{ color: 'white' }}
+							>
 								{isEditing ? 'Редактировать' : 'Опубликовать'}
 							</Button>
 							<a href='/'>
