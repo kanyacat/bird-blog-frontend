@@ -216,7 +216,6 @@
 			img {
 				margin: 10px 0;
 
-				min-width: 100%;
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
@@ -398,18 +397,33 @@
 }
 
 .skeleton {
+	height: 570px;
+	width: 24%;
+
 	background-color: #fff;
 	border: 1px solid #dedede;
 	border-radius: 6px;
 	overflow: hidden;
 	margin-bottom: 15px;
 
-	&Content {
-		padding: 20px;
+	margin-right: 8px;
+
+	@media screen and (max-width: 1150px) {
+		width: 32%;
 	}
 
-	&Info {
-		margin-left: 50px;
+	@media screen and (max-width: 800px) {
+		margin-bottom: 20px;
+
+		width: 48%;
+	}
+
+	@media screen and (max-width: 500px) {
+		width: 100%;
+		height: 520px;
+	}
+	&Content {
+		padding: 20px;
 	}
 }
 
@@ -422,11 +436,74 @@
 	}
 }
 
-.skeletonTags {
-	display: flex;
+.populateSkeleton {
+	height: 350px;
+	width: 32%;
 
-	span {
-		margin-right: 15px;
+	background-color: #fff;
+	border: 1px solid #dedede;
+	border-radius: 6px;
+	overflow: hidden;
+	margin-bottom: 15px;
+
+	margin-right: 8px;
+
+	@media screen and (max-width: 800px) {
+		width: 48%;
+
+		&:nth-child(3) {
+			width: 100%;
+			margin-right: 0;
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		width: 100%;
+		height: 350px;
+	}
+}
+
+.fullSkeleton {
+	padding: 60px 100px;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: #fff;
+
+	overflow: hidden;
+
+	.skeletonUser {
+		margin-bottom: 45px;
+	}
+
+	.tag {
+		margin-top: 45px;
+	}
+
+	.text {
+		margin-top: -20px;
+	}
+
+	@media screen and (max-width: 1000px) {
+		padding: 60px 60px;
+	}
+
+	@media screen and (max-width: 800px) {
+		padding: 60px 40px;
+	}
+
+	@media screen and (max-width: 550px) {
+		padding: 60px 15px;
+	}
+
+	@media screen and (max-width: 490px) {
+		padding-top: 85px;
+	}
+
+	@media screen and (max-width: 490px) {
+		padding: 0 5px;
+		padding-top: 85px;
 	}
 }
 

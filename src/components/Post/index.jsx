@@ -7,13 +7,15 @@ import EyeIcon from '@mui/icons-material/RemoveRedEyeOutlined'
 import CommentIcon from '@mui/icons-material/ChatBubbleOutlineOutlined'
 
 import styles from './Post.module.scss'
-import { PostSkeleton } from './Skeleton'
+import { PostSkeleton } from './PostSkeleton'
+import { PopulatePostSkeleton } from './PopulatePostSkeleton'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { fetchRemovePost } from '../../redux/slices/posts'
 import { UserInfo } from '../UserInfo'
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material'
+import { FullPostSkeleton } from './FullPostSkeleton'
 
 export const Post = ({
 	id,
@@ -31,6 +33,15 @@ export const Post = ({
 	isPopulatePost
 }) => {
 	const dispatch = useDispatch()
+
+	if (isLoading && isPopulatePost) {
+		return <PopulatePostSkeleton />
+	}
+
+	if (isLoading && isFullPost) {
+		return <FullPostSkeleton />
+	}
+
 	if (isLoading) {
 		return <PostSkeleton />
 	}

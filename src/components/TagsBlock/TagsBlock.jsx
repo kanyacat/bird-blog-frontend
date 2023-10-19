@@ -9,7 +9,7 @@ export const TagsBlock = ({ items, isLoading = true }) => {
 				<li>Все статьи</li>
 			</Link>
 			{(isLoading ? [...Array(5)] : items).map((name, i) => (
-				<Link className={styles.link} to={`/tag/${name}`}>
+				<Link key={i} className={styles.link} to={`/tag/${name}`}>
 					<li key={i}>#{name}</li>
 				</Link>
 			))}
