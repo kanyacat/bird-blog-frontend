@@ -8,7 +8,7 @@ import 'easymde/dist/easymde.min.css'
 import styles from './AddPost.module.scss'
 import { useSelector } from 'react-redux'
 import { isAuthSelector } from '../../redux/slices/auth'
-import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
 import axios from '../../axios'
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material'
@@ -186,9 +186,9 @@ export const AddPost = () => {
 							>
 								{isEditing ? 'Редактировать' : 'Опубликовать'}
 							</Button>
-							<a href='/'>
+							<Link to='/'>
 								<Button size='large'>Отмена</Button>
-							</a>
+							</Link>
 						</div>
 					</Paper>
 				</ThemeProvider>

@@ -8,9 +8,11 @@ import styles from './Login.module.scss'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAuth, isAuthSelector } from '../../redux/slices/auth'
-import { Navigate } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Pagination } from 'swiper/modules'
 
 export const Login = () => {
 	const isAuth = useSelector(isAuthSelector)
@@ -32,7 +34,6 @@ export const Login = () => {
 	const onSubmit = async values => {
 		const data = await dispatch(fetchAuth(values))
 
-		console.log(data)
 		if (!data.payload) {
 			return alert('Не удалось авторизоваться')
 		}
@@ -82,9 +83,10 @@ export const Login = () => {
 								/>
 								<Button
 									disabled={!isValid}
+									color='primary'
 									type='submit'
 									size='large'
-									variant='contained'
+									variant='outlined'
 									fullWidth
 								>
 									Войти
@@ -92,10 +94,95 @@ export const Login = () => {
 							</form>
 						</div>
 						<div className={styles.block}>
-							<img
-								src='https://oir.mobi/uploads/posts/2022-09/1662318764_6-oir-mobi-p-pushistie-ptichki-instagram-9.jpg'
-								alt=''
-							/>
+							<Swiper
+								spaceBetween={30}
+								centeredSlides={true}
+								autoplay={{
+									delay: 4000,
+									disableOnInteraction: false
+								}}
+								pagination={{
+									clickable: true
+								}}
+								modules={[Autoplay, Pagination]}
+								className={styles.swiper}
+							>
+								<SwiperSlide className={styles.swiperSlide}>
+									<div className={styles.info}>
+										<h2 className={styles.title}>Еще не с нами?</h2>
+										<h3 className={styles.title}>
+											Присоединяйтесь к дружной семье птицелюбов!
+										</h3>
+										<Link to='/register'>
+											<Button
+												className={styles.btn}
+												size='large'
+												variant='outlined'
+												fullWidth
+											>
+												Зарегистрироваться
+											</Button>
+										</Link>
+									</div>
+								</SwiperSlide>
+
+								<SwiperSlide className={styles.swiperSlide}>
+									<div className={styles.info}>
+										<h2 className={styles.title}>Еще не с нами?</h2>
+										<h3 className={styles.title}>
+											Присоединяйтесь к дружной семье птицелюбов!
+										</h3>
+										<Link to='/register'>
+											<Button
+												className={styles.btn}
+												size='large'
+												variant='outlined'
+												fullWidth
+											>
+												Зарегистрироваться
+											</Button>
+										</Link>
+									</div>
+								</SwiperSlide>
+
+								<SwiperSlide className={styles.swiperSlide}>
+									<div className={styles.info}>
+										<h2 className={styles.title}>Еще не с нами?</h2>
+										<h3 className={styles.title}>
+											Присоединяйтесь к дружной семье птицелюбов!
+										</h3>
+										<Link to='/register'>
+											<Button
+												className={styles.btn}
+												size='large'
+												variant='outlined'
+												fullWidth
+											>
+												Зарегистрироваться
+											</Button>
+										</Link>
+									</div>
+								</SwiperSlide>
+
+								<SwiperSlide className={styles.swiperSlide}>
+									<div className={styles.info}>
+										<h2 className={styles.title}>Еще не с нами?</h2>
+										<h3 className={styles.title}>
+											Присоединяйтесь к дружной семье птицелюбов!
+										</h3>
+										<Link to='/register'>
+											<Button
+												className={styles.btn}
+												size='large'
+												variant='outlined'
+												fullWidth
+											>
+												Зарегистрироваться
+											</Button>
+										</Link>
+									</div>
+								</SwiperSlide>
+							</Swiper>
 						</div>
 					</Paper>
 				</ThemeProvider>

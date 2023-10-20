@@ -21,52 +21,135 @@
 	justify-content: space-between;
 	align-items: center;
 
-	width: 800px;
-	height: 600px;
+	width: 70%;
+	height: 450px;
 
 	margin: 20vh auto;
 
 	border-radius: 5px;
-
-	button {
-		color: white;
-	}
 }
 
 .block {
-	width: 50%;
+	width: 60%;
 	height: 100%;
 
 	margin-right: 10px;
 	padding: 40px;
 
+	border-radius: 5px;
+
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+
+	justify-content: flex-start;
+
+	button {
+		width: 50%;
+	}
 
 	&:last-child {
+		width: 40%;
 		margin: 0;
 		padding: 0;
 	}
 
-	img {
-		margin-right: 5px;
-		width: 400px;
+	.swiper {
 		height: 600px;
-		object-fit: cover;
+		width: 100%;
+
+		--swiper-theme-color: white;
+
+		.info {
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+
+			align-items: center;
+
+			text-align: center;
+
+			h2 {
+				font-size: 30px !important;
+
+				color: white;
+				margin-bottom: 5px !important;
+			}
+
+			h3 {
+				font-size: 25px !important;
+				color: white;
+				margin: 0;
+				margin-bottom: 80px !important;
+			}
+		}
+
+		button {
+			width: 80%;
+			padding: 20px 50px;
+
+			border: 2.5px solid #fff;
+
+			color: #fff;
+			background-color: transparent;
+		}
+
+		@media screen and (max-width: 660px) {
+			height: 500px;
+		}
+
+		@media screen and (max-width: 400px) {
+			height: 400px;
+		}
+	}
+
+	.swiper-button-next {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%234c71ae'%2F%3E%3C%2Fsvg%3E") !important;
+	}
+
+	.swiperSlide {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		border-radius: 0 5px 5px 0;
+
+		opacity: 0.9;
+
+		&:nth-child(1) {
+			position: relative;
+			background: url('https://4lapki.com/wp-content/uploads/2019/05/https-avatars-mds-yandex-net-get-pdb-467185-11cb.jpeg')
+				center/cover no-repeat;
+		}
+
+		&:nth-child(2) {
+			background: url('https://cdn.culture.ru/images/1028829b-fbd3-5471-b05d-e7bacd415505')
+				center/cover no-repeat;
+		}
+
+		&:nth-child(3) {
+			background: url('https://w.forfun.com/fetch/f5/f5ba7957725d63492a6a9ffb5bb10ad1.jpeg')
+				center/cover no-repeat;
+		}
+
+		&:nth-child(4) {
+			background: url('https://gorodprizrak.com/wp-content/uploads/2023/06/282b58604eb7fb8d4b14b326e8c07936.jpg')
+				center/cover no-repeat;
+		}
 	}
 }
 
 .field {
-	margin-bottom: 20px !important;
+	margin-bottom: 30px !important;
+	font-family: Georgia, serif !important;
 }
 
 .title {
-	text-align: center !important;
+	font-family: Georgia, serif !important;
+	font-size: 35px !important;
+	font-style: normal;
+
 	font-weight: bold !important;
-	margin-bottom: 30px !important;
+	margin-bottom: 50px !important;
 }
 
 @media (max-width: 440px) {
