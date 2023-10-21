@@ -1,5 +1,5 @@
 .body {
-	padding-top: 55px;
+	padding-top: 60px;
 }
 
 .background {
@@ -21,12 +21,21 @@
 	justify-content: space-between;
 	align-items: center;
 
-	width: 70%;
+	width: 60%;
 	height: 450px;
 
 	margin: 20vh auto;
 
 	border-radius: 5px;
+
+	@media screen and (max-width: 950px) {
+		flex-direction: column-reverse;
+		justify-content: flex-start;
+
+		margin: 36vh auto;
+
+		width: 80%;
+	}
 }
 
 .block {
@@ -43,14 +52,65 @@
 
 	justify-content: flex-start;
 
+	@media screen and (max-width: 950px) {
+		width: 100%;
+		align-items: center;
+	}
+
 	button {
 		width: 50%;
+
+		@media screen and (max-width: 950px) {
+			width: 100%;
+		}
+	}
+
+	.regBtn {
+		width: 74%;
+
+		@media screen and (max-width: 950px) {
+			width: 100%;
+		}
+	}
+
+	.field {
+		margin-bottom: 30px !important;
+		font-family: Georgia, serif !important;
+	}
+
+	.title {
+		font-family: Georgia, serif !important;
+		font-size: 35px !important;
+		font-style: normal;
+
+		font-weight: bold !important;
+		margin-bottom: 50px !important;
+
+		@media screen and (max-width: 950px) {
+			font-size: 30px !important;
+			margin-bottom: 30px !important;
+		}
+
+		@media screen and (max-width: 520px) {
+			font-size: 25px !important;
+			margin: 0;
+			margin-bottom: 20px !important;
+		}
+
+		@media screen and (max-width: 370px) {
+			font-size: 22px !important;
+		}
 	}
 
 	&:last-child {
 		width: 40%;
 		margin: 0;
 		padding: 0;
+
+		@media screen and (max-width: 950px) {
+			width: 100%;
+			height: 200px;
+		}
 	}
 
 	.swiper {
@@ -60,7 +120,6 @@
 		--swiper-theme-color: white;
 
 		.info {
-			padding: 20px;
 			display: flex;
 			flex-direction: column;
 
@@ -73,6 +132,18 @@
 
 				color: white;
 				margin-bottom: 5px !important;
+
+				@media screen and (max-width: 1100px) {
+					font-size: 25px !important;
+				}
+
+				@media screen and (max-width: 950px) {
+					margin-bottom: 0 !important;
+				}
+
+				@media screen and (max-width: 520px) {
+					font-size: 20px !important;
+				}
 			}
 
 			h3 {
@@ -80,6 +151,18 @@
 				color: white;
 				margin: 0;
 				margin-bottom: 80px !important;
+
+				@media screen and (max-width: 1100px) {
+					font-size: 20px !important;
+				}
+
+				@media screen and (max-width: 950px) {
+					margin-bottom: 10px !important;
+				}
+
+				@media screen and (max-width: 520px) {
+					font-size: 15px !important;
+				}
 			}
 		}
 
@@ -91,6 +174,14 @@
 
 			color: #fff;
 			background-color: transparent;
+
+			@media screen and (max-width: 1000px) {
+				padding: 10px 30px;
+			}
+		}
+
+		.loginBtn {
+			padding: 10px 90px;
 		}
 
 		@media screen and (max-width: 660px) {
@@ -113,7 +204,9 @@
 
 		border-radius: 0 5px 5px 0;
 
-		opacity: 0.9;
+		@media screen and (max-width: 950px) {
+			border-radius: 5px 5px 0 0;
+		}
 
 		&:nth-child(1) {
 			position: relative;
@@ -135,26 +228,5 @@
 			background: url('https://gorodprizrak.com/wp-content/uploads/2023/06/282b58604eb7fb8d4b14b326e8c07936.jpg')
 				center/cover no-repeat;
 		}
-	}
-}
-
-.field {
-	margin-bottom: 30px !important;
-	font-family: Georgia, serif !important;
-}
-
-.title {
-	font-family: Georgia, serif !important;
-	font-size: 35px !important;
-	font-style: normal;
-
-	font-weight: bold !important;
-	margin-bottom: 50px !important;
-}
-
-@media (max-width: 440px) {
-	.root {
-		width: 100%;
-		padding: 30px;
 	}
 }

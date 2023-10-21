@@ -12,7 +12,7 @@ import { Link, Navigate } from 'react-router-dom'
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination } from 'swiper/modules'
+import { Autoplay } from 'swiper/modules'
 
 export const Login = () => {
 	const isAuth = useSelector(isAuthSelector)
@@ -24,10 +24,6 @@ export const Login = () => {
 		setError,
 		formState: { errors, isValid }
 	} = useForm({
-		defaultValues: {
-			email: 'test1@test.ru',
-			password: '12345'
-		},
 		mode: 'onChange'
 	})
 
@@ -101,10 +97,7 @@ export const Login = () => {
 									delay: 4000,
 									disableOnInteraction: false
 								}}
-								pagination={{
-									clickable: true
-								}}
-								modules={[Autoplay, Pagination]}
+								modules={[Autoplay]}
 								className={styles.swiper}
 							>
 								<SwiperSlide className={styles.swiperSlide}>
