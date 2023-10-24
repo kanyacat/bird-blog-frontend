@@ -19,6 +19,8 @@ export const FullPost = () => {
 	const { id } = useParams()
 
 	useEffect(() => {
+		window.scrollTo(0, 0)
+
 		axios
 			.get(`/posts/${id}`)
 			.then(res => {

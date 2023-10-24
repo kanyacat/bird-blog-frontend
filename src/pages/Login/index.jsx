@@ -21,11 +21,12 @@ export const Login = () => {
 	const {
 		register,
 		handleSubmit,
-		setError,
 		formState: { errors, isValid }
 	} = useForm({
 		mode: 'onChange'
 	})
+
+	window.scrollTo(0, 0)
 
 	const onSubmit = async values => {
 		const data = await dispatch(fetchAuth(values))

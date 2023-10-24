@@ -79,6 +79,8 @@ export const AddPost = () => {
 	}
 
 	useEffect(() => {
+		window.scrollTo(0, 0)
+
 		if (id) {
 			axios.get(`/posts/${id}`).then(res => {
 				setTitle(res.data.title)

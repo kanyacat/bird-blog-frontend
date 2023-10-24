@@ -15,6 +15,7 @@ export const Home = () => {
 	const isTagsLoading = tags.status === 'loading'
 
 	useEffect(() => {
+		window.scrollTo(0, 0)
 		dispatch(fetchPosts({ sortProperty: 'viewsCount', limit: 8 }))
 		dispatch(fetchLastPosts({ sortProperty: 'createdAt', limit: 3 }))
 

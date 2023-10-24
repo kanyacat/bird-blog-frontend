@@ -21,6 +21,8 @@ export const AllPosts = () => {
 	const isTagsLoading = tags.status === 'loading'
 
 	useEffect(() => {
+		window.scrollTo(0, 0)
+
 		if (tag) dispatch(fetchPostsByTag(tag))
 		else dispatch(fetchPosts({ sortProperty: 'createdAt' }))
 

@@ -21,7 +21,6 @@ export const Registration = () => {
 	const {
 		register,
 		handleSubmit,
-		setError,
 		formState: { errors, isValid }
 	} = useForm({
 		defaultValues: {
@@ -31,6 +30,8 @@ export const Registration = () => {
 		},
 		mode: 'onChange'
 	})
+
+	window.scrollTo(0, 0)
 
 	const onSubmit = async values => {
 		const data = await dispatch(fetchRegister(values))
@@ -58,7 +59,7 @@ export const Registration = () => {
 		<div className={styles.body}>
 			<div className={styles.background}>
 				<ThemeProvider theme={theme}>
-					<Paper classes={{ root: styles.root }} elevation={0}>
+					<Paper classes={{ root: styles.rootReg }} elevation={0}>
 						<div className={styles.block}>
 							<Typography classes={{ root: styles.title }} variant='h5'>
 								Регистрация

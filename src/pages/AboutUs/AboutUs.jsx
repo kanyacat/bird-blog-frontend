@@ -5,6 +5,8 @@ import Container from '@mui/material/Container'
 import styles from './AboutUs.module.scss'
 
 export const AboutUs = () => {
+	window.scrollTo(0, 0)
+
 	return (
 		<div className={styles.root}>
 			<div className={styles.main}>
