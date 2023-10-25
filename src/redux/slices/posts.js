@@ -9,10 +9,20 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async params => {
 })
 
 export const fetchLastPosts = createAsyncThunk(
-	'posts/fetchPopularPosts',
+	'posts/fetchLastPosts',
 	async params => {
 		const { data } = await axios.get('/posts', {
 			params: params
+		})
+		return data
+	}
+)
+
+export const fetchMyPosts = createAsyncThunk(
+	'posts/fetchMyPosts',
+	async userId => {
+		const { data } = await axios.get('/posts/me', {
+			params: userId
 		})
 		return data
 	}
@@ -85,7 +95,7 @@ const postsSlice = createSlice({
 			state.posts.items = []
 			state.posts.status = 'error'
 		},
-		//получение популярных статей
+		//получение последних статей
 		[fetchLastPosts.pending]: state => {
 			state.lastPosts.items = []
 			state.lastPosts.status = 'loading'
@@ -97,6 +107,19 @@ const postsSlice = createSlice({
 		[fetchLastPosts.rejected]: (state, action) => {
 			state.lastPosts.items = []
 			state.lastPosts.status = 'error'
+		},
+		//получение своих постов
+		[fetchMyPosts.pending]: state => {
+			state.posts.items = []
+			state.posts.status = 'loading'
+		},
+		[fetchMyPosts.fulfilled]: (state, action) => {
+			state.posts.items = action.payload
+			state.posts.status = 'success'
+		},
+		[fetchMyPosts.rejected]: (state, action) => {
+			state.posts.items = []
+			state.posts.status = 'error'
 		},
 		//получение постов по тегу
 		[fetchPostsByTag.pending]: state => {

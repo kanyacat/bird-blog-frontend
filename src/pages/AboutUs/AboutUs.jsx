@@ -1,6 +1,4 @@
 import React from 'react'
-
-import { Footer } from '../../components'
 import Container from '@mui/material/Container'
 import styles from './AboutUs.module.scss'
 
@@ -87,8 +85,6 @@ export const AboutUs = () => {
 					<p> СТАНЬ ЧАСТЬЮ НАШЕЙ ДРУЖНОЙ СЕМЬИ ПТИЦЕЛЮБОВ</p>
 				</h1>
 			</Container>
-
-			<Footer />
 		</div>
 	)
 }

@@ -39,6 +39,9 @@ export const Header = () => {
 						<span className={styles.line}>|</span>
 						{isAuth ? (
 							<div className={styles.auth}>
+								<Link to='/posts/me' className={styles.nav}>
+									Мои статьи
+								</Link>
 								<Link to='/add-post' className={styles.nav}>
 									Написать статью
 								</Link>

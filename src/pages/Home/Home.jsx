@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import { Footer, Post, Slider, TagsBlock } from '../../components'
+import { Post, Slider, TagsBlock } from '../../components'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchLastPosts, fetchPosts, fetchTags } from '../../redux/slices/posts'
 import styles from './Home.module.scss'
@@ -86,7 +86,6 @@ export const Home = () => {
 					)}
 				</div>
 			</Container>
-			<Footer />
 		</>
 	)
 }

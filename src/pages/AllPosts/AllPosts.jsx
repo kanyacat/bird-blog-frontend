@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 
-import { Footer, Post, TagsBlock } from '../../components'
+import { Post, TagsBlock } from '../../components'
 import { useDispatch, useSelector } from 'react-redux'
 import {
+	fetchMyPosts,
 	fetchPosts,
 	fetchPostsByTag,
 	fetchTags
@@ -10,8 +11,10 @@ import {
 import styles from './AllPosts.module.scss'
 import Container from '@mui/material/Container'
 import { useParams } from 'react-router-dom'
+import { NotFound } from '../NotFound/NotFound'
 
 export const AllPosts = () => {
+	const isMe = window.location.href.includes('me')
 	const { tag } = useParams()
 	const userData = useSelector(state => state.auth.data)
 	const { posts, tags } = useSelector(state => state.posts)
@@ -24,15 +27,33 @@ export const AllPosts = () => {
 		window.scrollTo(0, 0)
 
 		if (tag) dispatch(fetchPostsByTag(tag))
-		else dispatch(fetchPosts({ sortProperty: 'createdAt' }))
+		else if (isMe) {
+			dispatch(fetchMyPosts({ userId: userData?._id }))
+		} else dispatch(fetchPosts({ sortProperty: 'createdAt' }))
 
 		dispatch(fetchTags())
-	}, [tag])
+	}, [tag, userData, isMe])
+
+	if (posts.items.toString() === '') {
+		return (
+			<div className={styles.root}>
+				<Container maxWidth='lg'>
+					<NotFound text={'Вы еще не написали ни одной статьи'} />
+				</Container>
+			</div>
+		)
+	}
 
 	return (
 		<div className={styles.root}>
 			<Container maxWidth='lg'>
-				{tag ? <h1>#{tag}</h1> : <h1>Все статьи</h1>}
+				{tag ? (
+					<h1>#{tag}</h1>
+				) : isMe ? (
+					<h1>Мои статьи</h1>
+				) : (
+					<h1>Все статьи</h1>
+				)}
 				<TagsBlock items={tags.items} isLoading={isTagsLoading} />
 				<div className={styles.posts}>
 					{(isPostsLoading ? [...Array(8)] : posts.items).map((obj, index) =>
@@ -61,7 +82,6 @@ export const AllPosts = () => {
 					)}
 				</div>
 			</Container>
-			<Footer />
 		</div>
 	)
 }
