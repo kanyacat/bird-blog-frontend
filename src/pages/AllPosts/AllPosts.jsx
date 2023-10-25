@@ -14,7 +14,7 @@ import { useParams } from 'react-router-dom'
 import { NotFound } from '../NotFound/NotFound'
 
 export const AllPosts = () => {
-	const isMe = window.location.href.includes('me')
+	let isMe = window.location.href.includes('me')
 	const { tag } = useParams()
 	const userData = useSelector(state => state.auth.data)
 	const { posts, tags } = useSelector(state => state.posts)
@@ -29,7 +29,10 @@ export const AllPosts = () => {
 		if (tag) dispatch(fetchPostsByTag(tag))
 		else if (isMe) {
 			dispatch(fetchMyPosts({ userId: userData?._id }))
-		} else dispatch(fetchPosts({ sortProperty: 'createdAt' }))
+		} else {
+			isMe = false
+			dispatch(fetchPosts({ sortProperty: 'createdAt' }))
+		}
 
 		dispatch(fetchTags())
 	}, [tag, userData, isMe])
