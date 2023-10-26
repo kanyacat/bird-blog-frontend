@@ -37,16 +37,6 @@ export const AllPosts = () => {
 		dispatch(fetchTags())
 	}, [tag, userData, isMe])
 
-	if (posts.items.toString() === '') {
-		return (
-			<div className={styles.root}>
-				<Container maxWidth='lg'>
-					<NotFound text={'Вы еще не написали ни одной статьи'} />
-				</Container>
-			</div>
-		)
-	}
-
 	return (
 		<div className={styles.root}>
 			<Container maxWidth='lg'>
@@ -82,6 +72,11 @@ export const AllPosts = () => {
 								isPopulatePost={false}
 							/>
 						)
+					)}
+					{isMe && posts.items.toString() === '' ? (
+						<NotFound text={'Вы еще не написали ни одной статьи'} />
+					) : (
+						''
 					)}
 				</div>
 			</Container>

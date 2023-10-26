@@ -86,15 +86,17 @@ export const Post = ({
 				</ThemeProvider>
 			)}
 			{imageUrl && (
-				<img
-					className={clsx(
-						styles.image,
-						{ [styles.imageFull]: isFullPost },
-						{ [styles.imagePopulate]: isPopulatePost }
-					)}
-					src={imageUrl}
-					alt={title}
-				/>
+				<Link to={`/posts/${id}`}>
+					<img
+						className={clsx(
+							styles.image,
+							{ [styles.imageFull]: isFullPost },
+							{ [styles.imagePopulate]: isPopulatePost }
+						)}
+						src={imageUrl}
+						alt={title}
+					/>
+				</Link>
 			)}
 			<div
 				className={clsx(styles.wrapper, {
