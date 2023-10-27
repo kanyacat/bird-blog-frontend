@@ -11,7 +11,8 @@ import Skeleton from '@mui/material/Skeleton'
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material'
 
-export const CommentsBlock = ({ items, children, isLoading = true }) => {
+export const CommentsBlock = props => {
+	const { items, children, isLoading = true } = props
 	const theme = createTheme({
 		typography: {
 			fontFamily: `Lora,serif`,
@@ -23,36 +24,39 @@ export const CommentsBlock = ({ items, children, isLoading = true }) => {
 		<ThemeProvider theme={theme}>
 			<SideBlock title='Комментарии' disableGutters={true}>
 				<List>
-					{(isLoading ? [...Array(5)] : items ? items : [...Array(5)]).map(
-						(obj, index) => (
-							<React.Fragment key={index} style={{ fontFamily: 'Lora, serif' }}>
-								<ListItem alignItems='flex-start'>
-									<ListItemAvatar>
+					{isLoading
+						? [...Array(5)]
+						: items.map((obj, index) => (
+								<React.Fragment
+									key={index}
+									style={{ fontFamily: 'Lora, serif' }}
+								>
+									<ListItem alignItems='flex-start'>
+										<ListItemAvatar>
+											{isLoading ? (
+												<Skeleton variant='circular' width={40} height={40} />
+											) : (
+												<Avatar
+													alt={obj.user.fullName}
+													src={obj.user.avatarUrl}
+												/>
+											)}
+										</ListItemAvatar>
 										{isLoading ? (
-											<Skeleton variant='circular' width={40} height={40} />
+											<div style={{ display: 'flex', flexDirection: 'column' }}>
+												<Skeleton variant='text' height={25} width={120} />
+												<Skeleton variant='text' height={18} width={230} />
+											</div>
 										) : (
-											<Avatar
-												alt={obj.user.fullName}
-												src={obj.user.avatarUrl}
+											<ListItemText
+												primary={obj.user.fullName}
+												secondary={obj.text}
 											/>
 										)}
-									</ListItemAvatar>
-									{isLoading ? (
-										<div style={{ display: 'flex', flexDirection: 'column' }}>
-											<Skeleton variant='text' height={25} width={120} />
-											<Skeleton variant='text' height={18} width={230} />
-										</div>
-									) : (
-										<ListItemText
-											primary={obj.user.fullName}
-											secondary={obj.text}
-										/>
-									)}
-								</ListItem>
-								<Divider variant='inset' component='li' />
-							</React.Fragment>
-						)
-					)}
+									</ListItem>
+									<Divider variant='inset' component='li' />
+								</React.Fragment>
+						  ))}
 				</List>
 				{children}
 			</SideBlock>

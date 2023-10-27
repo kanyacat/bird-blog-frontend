@@ -56,8 +56,8 @@ export const Index = user => {
 							value={text}
 							label='Написать комментарий'
 							variant='outlined'
-							maxRows={10}
 							multiline
+							maxRows={4}
 							fullWidth
 							color='primary'
 							InputProps={{ style: { fontFamily: 'Lora, serif' } }}

@@ -1,17 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styles from './TagsBlock.module.scss'
+import { Tag } from './Tag'
 
 export const TagsBlock = ({ items, isLoading = true }) => {
 	return (
 		<ul className={styles.root}>
-			<Link className={styles.link} to={`/posts`}>
-				<li>Все статьи</li>
-			</Link>
+			<li className={styles.title}>Последние теги</li>
 			{(isLoading ? [...Array(5)] : items).map((name, i) => (
-				<Link key={i} className={styles.link} to={`/tag/${name}`}>
-					<li key={i}>#{name}</li>
-				</Link>
+				<Tag name={name} isLoading={isLoading} />
 			))}
 		</ul>
 	)
