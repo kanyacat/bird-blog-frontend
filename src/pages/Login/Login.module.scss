@@ -1,6 +1,5 @@
 .body {
 	padding: 60px 0;
-
 	background: url('https://catherineasquithgallery.com/uploads/posts/2023-02/1676618296_catherineasquithgallery-com-p-fon-khvoinii-les-40.jpg')
 		center center no-repeat fixed;
 	background-size: cover;
@@ -11,21 +10,16 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
 	width: 60%;
+	margin: 150px auto;
+	border-radius: 5px;
 	height: 450px;
 
-	margin: 150px auto;
-
-	border-radius: 5px;
-
-	@media screen and (max-width: 950px) {
+	@media screen and (width <= 950px) {
 		flex-direction: column-reverse;
 		justify-content: flex-start;
-
 		margin-top: 210px;
 		margin-bottom: 0;
-
 		width: 90%;
 	}
 }
@@ -33,18 +27,14 @@
 .block {
 	width: 60%;
 	height: 100%;
-
 	margin-right: 10px;
 	padding: 40px;
-
 	border-radius: 5px;
-
 	display: flex;
 	flex-direction: column;
-
 	justify-content: flex-start;
 
-	@media screen and (max-width: 950px) {
+	@media screen and (width <= 950px) {
 		width: 100%;
 		align-items: center;
 	}
@@ -52,7 +42,7 @@
 	button {
 		width: 50%;
 
-		@media screen and (max-width: 950px) {
+		@media screen and (width <= 950px) {
 			width: 100%;
 		}
 	}
@@ -60,7 +50,7 @@
 	.regBtn {
 		width: 74%;
 
-		@media screen and (max-width: 950px) {
+		@media screen and (width <= 950px) {
 			width: 100%;
 		}
 	}
@@ -74,22 +64,21 @@
 		font-family: Georgia, serif !important;
 		font-size: 35px !important;
 		font-style: normal;
-
 		font-weight: bold !important;
 		margin-bottom: 50px !important;
 
-		@media screen and (max-width: 950px) {
+		@media screen and (width <= 950px) {
 			font-size: 30px !important;
 			margin-bottom: 30px !important;
 		}
 
-		@media screen and (max-width: 520px) {
+		@media screen and (width <= 520px) {
 			font-size: 25px !important;
 			margin: 0;
 			margin-bottom: 20px !important;
 		}
 
-		@media screen and (max-width: 370px) {
+		@media screen and (width <= 370px) {
 			font-size: 22px !important;
 		}
 	}
@@ -99,7 +88,7 @@
 		margin: 0;
 		padding: 0;
 
-		@media screen and (max-width: 950px) {
+		@media screen and (width <= 950px) {
 			width: 100%;
 			height: 200px;
 		}
@@ -114,26 +103,23 @@
 		.info {
 			display: flex;
 			flex-direction: column;
-
 			align-items: center;
-
 			text-align: center;
 
 			h2 {
 				font-size: 30px !important;
-
 				color: white;
 				margin-bottom: 5px !important;
 
-				@media screen and (max-width: 1100px) {
+				@media screen and (width <= 1100px) {
 					font-size: 25px !important;
 				}
 
-				@media screen and (max-width: 950px) {
+				@media screen and (width <= 950px) {
 					margin-bottom: 0 !important;
 				}
 
-				@media screen and (max-width: 520px) {
+				@media screen and (width <= 520px) {
 					font-size: 20px !important;
 				}
 			}
@@ -144,15 +130,15 @@
 				margin: 0;
 				margin-bottom: 80px !important;
 
-				@media screen and (max-width: 1100px) {
+				@media screen and (width <= 1100px) {
 					font-size: 20px !important;
 				}
 
-				@media screen and (max-width: 950px) {
+				@media screen and (width <= 950px) {
 					margin-bottom: 10px !important;
 				}
 
-				@media screen and (max-width: 520px) {
+				@media screen and (width <= 520px) {
 					font-size: 15px !important;
 				}
 			}
@@ -161,13 +147,11 @@
 		button {
 			width: 80%;
 			padding: 20px 50px;
-
 			border: 2.5px solid #fff;
-
 			color: #fff;
 			background-color: transparent;
 
-			@media screen and (max-width: 1000px) {
+			@media screen and (width <= 1000px) {
 				padding: 10px 30px;
 			}
 		}
@@ -176,11 +160,11 @@
 			padding: 10px 90px;
 		}
 
-		@media screen and (max-width: 660px) {
+		@media screen and (width <= 660px) {
 			height: 500px;
 		}
 
-		@media screen and (max-width: 400px) {
+		@media screen and (width <= 400px) {
 			height: 400px;
 		}
 	}
@@ -193,10 +177,9 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
 		border-radius: 0 5px 5px 0;
 
-		@media screen and (max-width: 950px) {
+		@media screen and (width <= 950px) {
 			border-radius: 5px 5px 0 0;
 		}
 

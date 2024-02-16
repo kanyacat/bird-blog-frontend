@@ -9,11 +9,11 @@
 		background-color: white;
 	}
 
-	@media screen and (max-width: 660px) {
+	@media screen and (width <= 660px) {
 		height: 500px;
 	}
 
-	@media screen and (max-width: 400px) {
+	@media screen and (width <= 400px) {
 		height: 400px;
 	}
 }
@@ -23,7 +23,6 @@
 }
 
 .swiperSlide {
-	/* Center slide text vertically */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -39,7 +38,7 @@
 	}
 
 	&:nth-child(3) {
-		background: url('https://krasivosti.pro/uploads/posts/2022-09/1663062755_13-krasivosti-pro-p-yashcheritsa-glukhar-instagram-29.jpg')
+		background: url('https://w.forfun.com/fetch/be/be2bf54dfc7d15a8bbd6ceddd976c173.jpeg')
 			center/cover no-repeat;
 	}
 
@@ -82,22 +81,20 @@
 }
 
 .root {
-	margin: 0 0 50px 0;
+	margin: 0 0 50px;
 	padding: 100px 0;
-
 	height: 600px;
 	width: 100%;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 
-	@media screen and (max-width: 910px) {
+	@media screen and (width <= 910px) {
 		text-align: center;
 		justify-content: center;
 		align-items: center;
 		padding: 0;
-		margin: 0 0 -20vh 0;
+		margin: 0 0 -20vh;
 
 		.text {
 			width: 80%;
@@ -113,8 +110,8 @@
 		}
 	}
 
-	@media screen and (max-width: 660px) {
-		margin: 0 0 -5vh 0;
+	@media screen and (width <= 660px) {
+		margin: 0 0 -5vh;
 
 		.text {
 			width: 80%;
@@ -129,7 +126,7 @@
 		}
 	}
 
-	@media screen and (max-width: 400px) {
+	@media screen and (width <= 400px) {
 		.text {
 			h2 {
 				font-size: 30px;
@@ -145,6 +142,7 @@
 
 		.text {
 			width: 60%;
+
 			h2 {
 				width: 100%;
 			}
@@ -154,11 +152,11 @@
 			}
 		}
 
-		@media screen and (max-width: 910px) {
-			margin: 0 0 -5vh 0;
+		@media screen and (width <= 910px) {
+			margin: 0 0 -5vh;
 		}
 
-		@media screen and (max-width: 660px) {
+		@media screen and (width <= 660px) {
 			.text {
 				width: 90%;
 			}
@@ -172,29 +170,24 @@
 
 	.tag {
 		padding: 5px 10px;
-
-		font-family: Roboto, 'sans-serif';
+		font-family: Roboto, sans-serif;
 		text-transform: uppercase;
 		color: #fff;
 		font-weight: 700;
-
 		border-radius: 8px;
-		background: rgba(255, 255, 255, 0.15);
-
+		background: rgb(255 255 255 / 15%);
 		text-decoration: none;
 	}
 
 	.title {
 		font-family: Georgia, serif;
-
 		width: 50%;
-
 		font-size: 34px;
 		font-weight: 700;
 		line-height: 1.35;
 
 		&Bottom {
-			margin: 10px 0 0 0;
+			margin: 10px 0 0;
 		}
 	}
 
@@ -204,7 +197,6 @@
 
 	p {
 		width: 40%;
-
 		color: #e5e5e5;
 		font-family: Lora, serif;
 		font-size: 14px;

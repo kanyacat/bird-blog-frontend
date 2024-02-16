@@ -76,8 +76,8 @@ export const AboutUs = () => {
 							</p>
 						</div>
 						<img
-							src='https://krasivosti.pro/uploads/posts/2022-09/1662087803_15-krasivosti-pro-p-malenkaya-belenkaya-ptichka-vkontakte-18.jpg'
-							alt='птица'
+							src='https://naturfotografen-forum.de/data/o/127/638796/image::Harald_Klier.jpgbelenkaya-ptichka-vkontakte-18.jpg'
+							alt='птицы'
 						/>
 					</div>
 				</div>

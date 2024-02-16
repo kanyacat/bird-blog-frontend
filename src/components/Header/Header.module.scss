@@ -1,11 +1,9 @@
 .root {
 	position: fixed;
 	padding: 15px 0;
-
 	width: 100%;
 	z-index: 100;
-
-	background: rgba(0, 0, 0, 0.2);
+	background: rgb(0 0 0 / 20%);
 }
 
 .inner {
@@ -13,7 +11,7 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 
-	@media screen and (max-width: 750px) {
+	@media screen and (width <= 750px) {
 		justify-content: center;
 	}
 }
@@ -21,22 +19,19 @@
 .logo {
 	color: #fff;
 	font-family: 'League Spartan', sans-serif;
-
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 700;
 	line-height: normal;
-
 	text-transform: uppercase;
 	text-decoration: none;
-
 	transition: color 0.2s linear;
 
 	&:hover {
 		color: #e5e5e5; //ПОМЕНЯТЬ
 	}
 
-	@media screen and (max-width: 750px) {
+	@media screen and (width <= 750px) {
 		display: none;
 	}
 }
@@ -45,7 +40,7 @@
 	display: flex;
 	align-items: center;
 
-	@media screen and (max-width: 580px) {
+	@media screen and (width <= 580px) {
 		flex-direction: column;
 	}
 
@@ -53,18 +48,14 @@
 		position: relative;
 		margin-left: 25px;
 		padding: 0;
-
 		color: #e5e5e5;
 		font-family: Roboto, sans-serif;
 		font-size: 14px;
 		font-weight: 700;
 		line-height: normal;
-
 		border: none;
 		background: none;
-
 		cursor: pointer;
-
 		transition: color 0.2s linear;
 
 		&:hover,
@@ -74,39 +65,35 @@
 			outline: none;
 		}
 
-		@media screen and (max-width: 650px) {
+		@media screen and (width <= 650px) {
 			font-size: 13px;
 		}
 
-		@media screen and (max-width: 580px) {
+		@media screen and (width <= 580px) {
 			font-size: 14px;
 		}
 
-		@media screen and (max-width: 380px) {
+		@media screen and (width <= 380px) {
 			font-size: 12px;
 		}
 	}
 
-	.nav:after {
+	.nav::after {
 		position: absolute;
 		content: '';
-
 		width: 100%;
 		height: 2px;
-
 		left: 0;
 		bottom: -5px;
 		z-index: 1;
-
 		background: #d4a373;
 		opacity: 0;
-
 		transition: opacity 0.2s linear;
 	}
 
-	.nav:hover:after,
-	.nav:active:after,
-	.nav:focus:after {
+	.nav:hover::after,
+	.nav:active::after,
+	.nav:focus::after {
 		opacity: 1;
 		outline: none;
 	}
@@ -115,7 +102,7 @@
 		margin-left: 25px;
 		color: #e5e5e5;
 
-		@media screen and (max-width: 580px) {
+		@media screen and (width <= 580px) {
 			display: none;
 		}
 	}

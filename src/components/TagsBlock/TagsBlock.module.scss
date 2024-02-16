@@ -1,13 +1,10 @@
 .root {
 	padding: 0;
-
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: center;
-
 	font-family: Georgia, serif;
-
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 700;
@@ -18,7 +15,6 @@
 		margin-right: 20px;
 		text-decoration: none;
 		list-style: none;
-
 		outline: none;
 		transition: color 0.2s linear;
 

@@ -1,41 +1,36 @@
 .root {
 	position: relative;
 	margin-bottom: 50px;
-
 	border-radius: 10px;
-
 	width: 24%;
-
 	height: 570px;
 	overflow: hidden;
-
 	border: 1px solid #fff;
-
 	transition: border 0.2s linear;
 
-	@media screen and (max-width: 1150px) {
+	@media screen and (width <= 1150px) {
 		width: 32%;
 	}
 
-	@media screen and (max-width: 800px) {
+	@media screen and (width <= 800px) {
 		margin-bottom: 20px;
 		height: 600px;
-
 		width: 48%;
 	}
 
-	@media screen and (max-width: 500px) {
+	@media screen and (width <= 500px) {
 		width: 100%;
 		height: 520px;
 	}
 
-	@media screen and (max-width: 380px) {
+	@media screen and (width <= 380px) {
 		height: 570px;
 	}
 
 	&:hover {
 		border: 1px solid #d4a373;
 		box-shadow: 0 0 0 1px #d4a373;
+
 		.editButtons {
 			opacity: 1;
 		}
@@ -45,19 +40,21 @@
 		margin-right: 8px;
 	}
 
-	@media screen and (max-width: 1150px) {
+	@media screen and (width <= 1150px) {
 		&:nth-child(3n) {
 			margin-right: 0;
 		}
+
 		&:not(:nth-child(3n)) {
 			margin-right: 8px;
 		}
 	}
 
-	@media screen and (max-width: 800px) {
+	@media screen and (width <= 800px) {
 		&:nth-child(2n) {
 			margin-right: 0;
 		}
+
 		&:not(:nth-child(2n)) {
 			margin-right: 8px;
 		}
@@ -65,12 +62,9 @@
 
 	&Full {
 		padding: 0 100px;
-
 		margin-bottom: 10px;
-
 		width: 100%;
 		height: 100%;
-
 		transition: none;
 		border: none;
 		box-shadow: none;
@@ -80,23 +74,23 @@
 			box-shadow: none;
 		}
 
-		@media screen and (max-width: 1000px) {
+		@media screen and (width <= 1000px) {
 			padding: 0 60px;
 		}
 
-		@media screen and (max-width: 800px) {
+		@media screen and (width <= 800px) {
 			padding: 0 40px;
 		}
 
-		@media screen and (max-width: 550px) {
+		@media screen and (width <= 550px) {
 			padding: 0 15px;
 		}
 
-		@media screen and (max-width: 490px) {
+		@media screen and (width <= 490px) {
 			padding-top: 25px;
 		}
 
-		@media screen and (max-width: 490px) {
+		@media screen and (width <= 490px) {
 			padding: 0 5px;
 			padding-top: 25px;
 		}
@@ -105,15 +99,11 @@
 	&Populate {
 		width: 32%;
 		height: 350px;
-
 		display: flex;
 		flex-direction: column;
-
 		justify-content: flex-end;
-
 		padding-bottom: 25px;
-
-		background-color: rgba(1, 1, 1, 0.2);
+		background-color: rgb(1 1 1 / 20%);
 
 		&:nth-child(3) {
 			margin-right: 0;
@@ -124,7 +114,7 @@
 			height: 100%;
 		}
 
-		@media screen and (max-width: 800px) {
+		@media screen and (width <= 800px) {
 			width: 49%;
 
 			&:nth-child(3) {
@@ -133,7 +123,7 @@
 			}
 		}
 
-		@media screen and (max-width: 500px) {
+		@media screen and (width <= 500px) {
 			width: 100%;
 			height: 350px;
 		}
@@ -142,24 +132,20 @@
 
 .image {
 	position: relative;
-
 	width: 280px;
 	height: 280px;
 	object-fit: cover;
 
-	@media screen and (max-width: 1150px) {
+	@media screen and (width <= 1150px) {
 		width: 100%;
 	}
 
 	&Full {
 		margin-top: 60px;
-
 		width: 100%;
 		height: 100%;
 		max-height: 50vh;
-
 		border-radius: 10px;
-
 		cursor: auto;
 	}
 
@@ -169,7 +155,6 @@
 		top: 0;
 		width: 100%;
 		height: 100%;
-
 		z-index: -1;
 		pointer-events: all;
 	}
@@ -194,7 +179,6 @@
 .content {
 	max-height: 60px;
 	overflow: hidden;
-
 	color: #495057;
 	font-family: Lora, serif;
 	font-size: 14px;
@@ -208,39 +192,35 @@
 
 	&Full {
 		color: #23282b;
-
 		font-size: 20px;
 		max-height: none;
 		overflow: visible;
-
 		line-height: 28px;
-
 		text-indent: 35px;
 
 		strong {
 			font-size: 25px;
 
-			@media screen and (max-width: 490px) {
+			@media screen and (width <= 490px) {
 				font-size: 22px;
 			}
 		}
+
 		p:has(img) {
 			text-align: center;
 			text-indent: 0;
 
 			img {
 				margin: 10px 0;
-
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
 				object-position: center center;
-
 				border-radius: 5px;
 			}
 		}
 
-		@media screen and (max-width: 490px) {
+		@media screen and (width <= 490px) {
 			font-size: 18px;
 		}
 	}
@@ -252,11 +232,9 @@
 
 .title {
 	font-family: Georgia, serif;
-
 	line-height: 20px;
 	padding: 0;
-
-	margin: 5px 0 15px 0;
+	margin: 5px 0 15px;
 
 	a {
 		color: #495057;
@@ -264,9 +242,7 @@
 		font-size: 18px;
 		font-style: normal;
 		font-weight: 700;
-
 		text-decoration: none;
-
 		transition: color 0.2s linear;
 
 		&:hover {
@@ -277,19 +253,16 @@
 	&Full {
 		margin: 30px 0;
 		color: #23282b;
-
 		font-size: 42px;
 		font-weight: 900;
-
 		line-height: 1.2;
 
-		@media screen and (max-width: 550px) {
+		@media screen and (width <= 550px) {
 			margin: 15px 0;
-
 			font-size: 32px;
 		}
 
-		@media screen and (max-width: 490px) {
+		@media screen and (width <= 490px) {
 			font-size: 25px;
 		}
 	}
@@ -305,30 +278,25 @@
 	position: absolute;
 	right: 0;
 	top: 0;
-
 	display: flex;
 	flex-wrap: wrap;
-
 	justify-content: right;
 
 	li {
 		margin-right: 5px;
 		margin-bottom: 5px;
 		padding: 5px 10px;
-
 		display: flex;
+
 		//flex-wrap: wrap;
 
-		font-family: Roboto, 'sans-serif';
+		font-family: Roboto, sans-serif;
 		text-transform: uppercase;
 		font-weight: 700;
-
 		border-radius: 8px;
-		background: rgba(255, 255, 255, 0.15);
-
+		background: rgb(255 255 255 / 15%);
 		font-size: 14px;
 		opacity: 0.7;
-
 		transition: opacity 0.2s linear;
 
 		&:hover {
@@ -336,7 +304,7 @@
 		}
 
 		a {
-			color: #ffffff;
+			color: #fff;
 			text-decoration: none;
 		}
 	}
@@ -344,10 +312,10 @@
 	&Full {
 		position: inherit;
 		padding: 0;
+
 		li {
 			margin-right: 10px;
 			padding: 0;
-
 			background: none;
 			opacity: 0.6;
 
@@ -366,9 +334,8 @@
 	position: absolute;
 	bottom: 0;
 	left: -20px;
-
 	list-style: none;
-	margin: 20px 0 0 0;
+	margin: 20px 0 0;
 
 	li {
 		display: inline-flex;
@@ -385,23 +352,22 @@
 
 	&Full {
 		padding: 0 100px;
-
 		bottom: -10px;
 		left: 38px;
 
-		@media screen and (max-width: 1000px) {
+		@media screen and (width <= 1000px) {
 			padding: 0 60px;
 		}
 
-		@media screen and (max-width: 800px) {
+		@media screen and (width <= 800px) {
 			padding: 0 40px;
 		}
 
-		@media screen and (max-width: 550px) {
+		@media screen and (width <= 550px) {
 			padding: 0 15px;
 		}
 
-		@media screen and (max-width: 490px) {
+		@media screen and (width <= 490px) {
 			padding: 0 5px;
 		}
 	}
@@ -420,29 +386,27 @@
 .skeleton {
 	height: 570px;
 	width: 24%;
-
 	background-color: #fff;
 	border: 1px solid #dedede;
 	border-radius: 6px;
 	overflow: hidden;
 	margin-bottom: 15px;
-
 	margin-right: 8px;
 
-	@media screen and (max-width: 1150px) {
+	@media screen and (width <= 1150px) {
 		width: 32%;
 	}
 
-	@media screen and (max-width: 800px) {
+	@media screen and (width <= 800px) {
 		margin-bottom: 20px;
-
 		width: 48%;
 	}
 
-	@media screen and (max-width: 500px) {
+	@media screen and (width <= 500px) {
 		width: 100%;
 		height: 520px;
 	}
+
 	&Content {
 		padding: 20px;
 	}
@@ -460,16 +424,14 @@
 .populateSkeleton {
 	height: 350px;
 	width: 32%;
-
 	background-color: #fff;
 	border: 1px solid #dedede;
 	border-radius: 6px;
 	overflow: hidden;
 	margin-bottom: 15px;
-
 	margin-right: 8px;
 
-	@media screen and (max-width: 800px) {
+	@media screen and (width <= 800px) {
 		width: 48%;
 
 		&:nth-child(3) {
@@ -478,7 +440,7 @@
 		}
 	}
 
-	@media screen and (max-width: 500px) {
+	@media screen and (width <= 500px) {
 		width: 100%;
 		height: 350px;
 	}
@@ -486,12 +448,9 @@
 
 .fullSkeleton {
 	padding: 60px 100px;
-
 	width: 100%;
 	height: 100%;
-
 	background-color: #fff;
-
 	overflow: hidden;
 
 	.skeletonUser {
@@ -506,23 +465,23 @@
 		margin-top: -20px;
 	}
 
-	@media screen and (max-width: 1000px) {
-		padding: 60px 60px;
+	@media screen and (width <= 1000px) {
+		padding: 60px;
 	}
 
-	@media screen and (max-width: 800px) {
+	@media screen and (width <= 800px) {
 		padding: 60px 40px;
 	}
 
-	@media screen and (max-width: 550px) {
+	@media screen and (width <= 550px) {
 		padding: 60px 15px;
 	}
 
-	@media screen and (max-width: 490px) {
+	@media screen and (width <= 490px) {
 		padding-top: 85px;
 	}
 
-	@media screen and (max-width: 490px) {
+	@media screen and (width <= 490px) {
 		padding: 0 5px;
 		padding-top: 85px;
 	}
@@ -531,11 +490,9 @@
 .editButtons {
 	position: absolute;
 	z-index: 100;
-
 	right: 15px;
 	top: 230px;
-
-	background-color: rgba(255, 255, 255, 0.9);
+	background-color: rgb(255 255 255 / 90%);
 	border-radius: 10px;
 	opacity: 0;
 	transition: all 0.15s ease-in-out;

@@ -1,15 +1,15 @@
 .root {
 	padding: 30vh 0;
 
-	@media screen and (max-height: 1440px) {
+	@media screen and (height <= 1440px) {
 		padding: 25vh 0;
 	}
 
-	@media screen and (max-height: 1080px) {
+	@media screen and (height <= 1080px) {
 		padding: 15vh 0;
 	}
 
-	@media screen and (max-height: 650px) {
+	@media screen and (height <= 650px) {
 		padding: 10vh 0;
 	}
 }
@@ -18,28 +18,24 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
 	justify-content: center;
-
 	text-align: center;
 }
 
 .title {
 	font-family: Georgia, serif;
-
 	color: #495057;
 	font-size: 80px;
 	font-style: normal;
 	font-weight: 700;
 	line-height: normal;
-
 	margin-bottom: 0;
 
-	@media screen and (max-width: 580px) {
+	@media screen and (width <= 580px) {
 		font-size: 65px;
 	}
 
-	@media screen and (max-width: 420px) {
+	@media screen and (width <= 420px) {
 		font-size: 50px;
 	}
 }
