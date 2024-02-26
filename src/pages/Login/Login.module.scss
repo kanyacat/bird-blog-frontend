@@ -1,14 +1,20 @@
 .body {
 	padding: 60px 0;
 	background: url('https://catherineasquithgallery.com/uploads/posts/2023-02/1676618296_catherineasquithgallery-com-p-fon-khvoinii-les-40.jpg')
-		center center no-repeat fixed;
+	center center no-repeat fixed;
 	background-size: cover;
 }
 
 .root {
 	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	width: 60%;
 	margin: 150px auto;
@@ -16,7 +22,12 @@
 	height: 450px;
 
 	@media screen and (width <= 950px) {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: reverse;
+		-ms-flex-direction: column-reverse;
 		flex-direction: column-reverse;
+		-webkit-box-pack: start;
+		-ms-flex-pack: start;
 		justify-content: flex-start;
 		margin-top: 210px;
 		margin-bottom: 0;
@@ -30,12 +41,21 @@
 	margin-right: 10px;
 	padding: 40px;
 	border-radius: 5px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
 	justify-content: flex-start;
 
 	@media screen and (width <= 950px) {
 		width: 100%;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
 	}
 
@@ -101,8 +121,15 @@
 		--swiper-theme-color: white;
 
 		.info {
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
 			flex-direction: column;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
 			align-items: center;
 			text-align: center;
 
@@ -174,8 +201,14 @@
 	}
 
 	.swiperSlide {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
 		border-radius: 0 5px 5px 0;
 
@@ -186,22 +219,22 @@
 		&:nth-child(1) {
 			position: relative;
 			background: url('https://4lapki.com/wp-content/uploads/2019/05/https-avatars-mds-yandex-net-get-pdb-467185-11cb.jpeg')
-				center/cover no-repeat;
+			center/cover no-repeat;
 		}
 
 		&:nth-child(2) {
 			background: url('https://cdn.culture.ru/images/1028829b-fbd3-5471-b05d-e7bacd415505')
-				center/cover no-repeat;
+			center/cover no-repeat;
 		}
 
 		&:nth-child(3) {
 			background: url('https://w.forfun.com/fetch/f5/f5ba7957725d63492a6a9ffb5bb10ad1.jpeg')
-				center/cover no-repeat;
+			center/cover no-repeat;
 		}
 
 		&:nth-child(4) {
 			background: url('https://gorodprizrak.com/wp-content/uploads/2023/06/282b58604eb7fb8d4b14b326e8c07936.jpg')
-				center/cover no-repeat;
+			center/cover no-repeat;
 		}
 	}
 }

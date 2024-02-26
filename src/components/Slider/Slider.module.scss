@@ -23,59 +23,65 @@
 }
 
 .swiperSlide {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 
 	&:nth-child(1) {
 		background: url('https://kipmu.ru/wp-content/uploads/2021/08/sknpt.jpg')
-			center/cover no-repeat;
+		center/cover no-repeat;
 	}
 
 	&:nth-child(2) {
 		background: url('https://gorodprizrak.com/wp-content/uploads/2023/06/a726548c7e1e7af3e4f094b4a77e102a.jpg')
-			center/cover no-repeat;
+		center/cover no-repeat;
 	}
 
 	&:nth-child(3) {
 		background: url('https://w.forfun.com/fetch/be/be2bf54dfc7d15a8bbd6ceddd976c173.jpeg')
-			center/cover no-repeat;
+		center/cover no-repeat;
 	}
 
 	&:nth-child(4) {
 		background: url('https://w.forfun.com/fetch/a6/a616bb7b050285232122ee0bc670641d.jpeg')
-			center/cover no-repeat;
+		center/cover no-repeat;
 	}
 
 	&:nth-child(5) {
 		background: url('https://pofoto.club/uploads/posts/2022-01/1641615054_40-pofoto-club-p-ptits-sdelannie-mnoi-foto-69.jpg')
-			center/cover no-repeat;
+		center/cover no-repeat;
 	}
 
 	&Bottom {
 		&:nth-child(1) {
 			background: url('https://pofoto.club/uploads/posts/2021-12/1640341743_1-pofoto-club-p-foto-vorobev-na-vetke-1.jpg')
-				center/cover no-repeat;
+			center/cover no-repeat;
 		}
 
 		&:nth-child(2) {
 			background: url('https://i.artfile.ru/1981x1090_813964_[www.ArtFile.ru].jpg')
-				center/cover no-repeat;
+			center/cover no-repeat;
 		}
 
 		&:nth-child(3) {
 			background: url('https://i.ibb.co/Mc4cHjD/1580098668-23-p-nastoyashchie-kozodoi-zhivotnie-54.jpg')
-				center/cover no-repeat;
+			center/cover no-repeat;
 		}
 
 		&:nth-child(4) {
 			background: url('https://w.forfun.com/fetch/01/01dd0c752ac4a912e54bf9ec9752c470.jpeg')
-				center/cover no-repeat;
+			center/cover no-repeat;
 		}
 
 		&:nth-child(5) {
 			background: url('https://i.pinimg.com/originals/22/01/2f/22012f436cafad3c8fc7daa57faceea9.jpg')
-				center/cover no-repeat;
+			center/cover no-repeat;
 		}
 	}
 }
@@ -85,13 +91,24 @@
 	padding: 100px 0;
 	height: 600px;
 	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
 	justify-content: flex-end;
 
 	@media screen and (width <= 910px) {
 		text-align: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
 		padding: 0;
 		margin: 0 0 -20vh;
@@ -136,7 +153,11 @@
 
 	&Bottom {
 		text-align: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
 		padding: 0;
 

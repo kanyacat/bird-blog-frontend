@@ -14,19 +14,33 @@
 	}
 
 	.blocks {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
+		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
 		justify-content: space-between;
+		-webkit-box-align: start;
+		-ms-flex-align: start;
 		align-items: flex-start;
 
 		@media screen and (width <= 740px) {
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
 			justify-content: center;
 			text-align: center;
 		}
 
 		.block {
 			width: 25%;
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
 			flex-direction: column;
 
 			@media screen and (width <= 740px) {
@@ -53,6 +67,8 @@
 				font-weight: 400;
 				line-height: normal;
 				text-decoration: none;
+				-webkit-transition: color 0.2s linear;
+				-o-transition: color 0.2s linear;
 				transition: color 0.2s linear;
 
 				&:hover {
@@ -76,9 +92,18 @@
 
 			.social {
 				padding-right: 60px;
+				display: -webkit-box;
+				display: -ms-flexbox;
 				display: flex;
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: normal;
+				-ms-flex-direction: row;
 				flex-direction: row;
+				-webkit-box-pack: justify;
+				-ms-flex-pack: justify;
 				justify-content: space-between;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
 				align-items: center;
 
 				@media screen and (width <= 740px) {
@@ -87,6 +112,8 @@
 				}
 
 				@media screen and (width <= 460px) {
+					-webkit-box-pack: center;
+					-ms-flex-pack: center;
 					justify-content: center;
 				}
 
@@ -103,6 +130,8 @@ a:nth-child(1),
 a:nth-child(4) {
 	&:hover {
 		path {
+			-webkit-transition: fill 0.2s linear;
+			-o-transition: fill 0.2s linear;
 			transition: fill 0.2s linear;
 
 			&:nth-child(1),
@@ -116,6 +145,8 @@ a:nth-child(4) {
 a:nth-child(2) {
 	&:hover {
 		path {
+			-webkit-transition: fill 0.2s linear;
+			-o-transition: fill 0.2s linear;
 			transition: fill 0.2s linear;
 
 			&:nth-child(1),
@@ -129,6 +160,8 @@ a:nth-child(2) {
 a:nth-child(3) {
 	&:hover {
 		path {
+			-webkit-transition: fill 0.2s linear;
+			-o-transition: fill 0.2s linear;
 			transition: fill 0.2s linear;
 
 			&:nth-child(2) {
